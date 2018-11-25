@@ -61,7 +61,7 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="#">Daftar Sekarang</a>
+                        <a href="daftar.php">Daftar Sekarang</a>
                     </div>
                 </div>
         </div>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -29,6 +28,7 @@
 	<link rel="stylesheet" type="text/css" href="css/fix.css">
 	<link rel="stylesheet" type="text/css" href="../style.css">
 <!--===============================================================================================-->
+    <link href=”pendaftaran.css” rel=”stylesheet”
 </head>
 <body cl >
 	 <header class="header_area animated ">
@@ -46,12 +46,7 @@
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#bawah">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                    
                                 </ul>
                                 
                             </div>
@@ -61,47 +56,57 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="#">Daftar Sekarang</a>
+                        <a href="index.php">login</a>
                     </div>
                 </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-	<div class="limiter ">
+	<div class="">
 		<div class="container-login100" style="background-image: url('../img/bg-img/welcome-bg.png');">
-			<div class="wrap-login70 p-t-30 p-b-50">
-				<span class="login100-form-title p-b-41 "  >
-					 FORM PENDAFTARAN <br>
+			<div class="wrap-login70 p-t-60 p-b-50">
+				<span class="login100-form-title p-b-10 "  >
+					Isi Form Pendaftaran <br>
 					
 				</span>
-				<h4  class="koko">Lengkapi Data diri Anda </h4>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="#">
+				<h4  class="koko">Isi Sesuai Data Diri Anda</h4>
+			 <form>
+                  <div class="form-group">
+                    <label  class="form-text text-muted" for="exampleInputEmail1">Nama Lengkap</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
+                  </div>
+                   <div class="form-group">
+                        <label class="form-text text-muted" for="exampleFormControlSelect1">Pilih Paket Pendaftaran</label>
+                        <select class="form-control" id="exampleFormControlSelect1"     >
+                            <option >Silahkan pilih paket</option>
+                            <option value="p1" >Paket 1 Rp500.000 belum termasuk alat dan pemasangan</option>
+                            <option value="p2">Paket 2 Rp1000.000 sudah termasuk alat dan pemasangan</option>
+                        </select>
+                    </div>
+                   <div class="form-group">
+                    <label  class="form-text text-muted" for="exampleInputEmail1">Nomor HP</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nomor HP">
+                  </div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Masukan username Anda">
-						<input class="input100" type="text" name="username" placeholder="User name">
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
-					</div>
+                  <div class="form-group">
+                    <label class="form-text text-muted" for="exampleFormControlTextarea1">Masukan alamat lengkap anda</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Masukan alamat sesuai dengan Kartu Keluarga" rows="3"></textarea>
+                 </div>
+                     
+                        <div   style="text-align: center;">
+                    <button  style="" type="submit" class="col-md-4 btn btn-primary" style="margin-right: -300px">Daftar sekarang</button>
+                        </div>
+                      
+            </form>
 
-					<div class="wrap-input100 validate-input" data-validate="Masukan  password Anda">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Masukan  password Anda">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Masukan  password Anda">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
+            <div class="row main">
+                 
+                <div class="main-login main-center">
+                    
+                </div>
+            </div>
+        </div>
 
-					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn" type="submit" name="submit">
-							Login
-						</button>
-					</div>
-
-				</form>
 			</div>
 		</div>
 	</div>
@@ -170,7 +175,6 @@
     <script src="../js/footer-reveal.min.js"></script>
     <!-- Active JS -->
     <script src="../js/active.js"></script>
-
 
 </body>
 </html>

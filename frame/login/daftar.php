@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	 <link rel="icon" href="../img/core-img/logo_gowater.jpg">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -28,20 +28,20 @@
 	<link rel="stylesheet" type="text/css" href="css/fix.css">
 	<link rel="stylesheet" type="text/css" href="../style.css">
 <!--===============================================================================================-->
-    <link href=”pendaftaran.css” rel=”stylesheet”
+    <link href=”pendaftaran.css” rel=”stylesheet”>
 </head>
 <body cl >
 	 <header class="header_area animated ">
         <div class="container-fluid ">
             <div class="row align-items-center">
-                <!-- Menu Area Start -->
+                <!-- Menu -->
                 <div class="col-12 col-lg-10">
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
                            <a href="../"><img style="width:75px; height:50px;" src="../img/logo_gowater.png"></img></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                            <!-- Menu Area -->
+                            <!-- Menu  -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
@@ -53,7 +53,7 @@
                         </nav>
                     </div>
                 </div>
-                <!-- Signup btn -->
+                <!-- daftar -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
                         <a href="index.php">login</a>
@@ -61,7 +61,7 @@
                 </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
+    <!-- header  -->
 	<div class="">
 		<div class="container-login100" style="background-image: url('../img/bg-img/welcome-bg.png');">
 			<div class="wrap-login70 p-t-60 p-b-50">
@@ -73,7 +73,7 @@
 			 <form>
                   <div class="form-group">
                     <label  class="form-text text-muted" for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
                   </div>
                    <div class="form-group">
                         <label class="form-text text-muted" for="exampleFormControlSelect1">Pilih Paket Pendaftaran</label>
@@ -85,7 +85,7 @@
                     </div>
                    <div class="form-group">
                     <label  class="form-text text-muted" for="exampleInputEmail1">Nomor HP</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nomor HP">
+                    <input type="number"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nomor HP">
                   </div>
 
                   <div class="form-group">
@@ -112,13 +112,13 @@
 	</div>
 	
 
-	<!-- ***** Footer Area Start ***** -->
+	<!-- Footer  -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix ">
-        <!-- footer logo -->
+        <!-- logo  footer -->
         <div class="footer-text">
-            <img style="width:80px; height:50px;" src="../img/logo_gowater.png"></img>
+            <img style="width:80px; height:50px;" src="../img/logo_gowater.png">
         </div>
-        <!-- social icon-->
+        <!-- sosmed icon -->
         <div class="footer-social-icon">
             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
@@ -135,9 +135,9 @@
                 </ul>
             </nav>
 		</div>
-        <!-- Foooter Text-->
+        <!-- Foooter -->
         <div class="copyright-text">
-            <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
+            <!--  -->
             <p>Copyright ©2018  Designed by Sasori</p>
         </div>
     </footer>

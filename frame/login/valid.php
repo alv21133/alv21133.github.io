@@ -11,7 +11,7 @@
 					echo "$username"; 
 					echo "$password";
 			
-				$data=$dbkonek->query("SELECT * FROM user WHERE username='$username' AND password='$password' LIMIT 1");
+				$data=$dbkonek->query("SELECT * FROM login WHERE username='$username' AND password='$password' LIMIT 1");
 				$count=mysqli_num_rows($data);
 				 if ($count==1) {
 				 		$_SESSION['login']=true;

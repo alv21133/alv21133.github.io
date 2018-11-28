@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+ <link rel="icon" href="../img/core-img/logo_gowater.jpg">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -46,12 +46,7 @@
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#bawah">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                  
                                 </ul>
                                 
                             </div>

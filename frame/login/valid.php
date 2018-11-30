@@ -17,10 +17,12 @@
 				 		$_SESSION['login']=true;
 				 		$_SESSION['user']=$username;
 				 		$_SESSION['pass']=$password;
-				 		header("location: ../dashboard/index.php");
+				 		header("location: ../dashboard/");
 				 	}else{
 				 		?>
-						<script type="text/javascript">alert("username password salah"); window.location = 'index.php'</script>
+						<script type="text/javascript">alert("username password salah"); 
+						
+						window.location = '../login/'</script>
 						<?php	
 				 	}
 

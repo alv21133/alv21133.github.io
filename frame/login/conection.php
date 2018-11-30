@@ -9,7 +9,7 @@ $dbkonek= new mysqli ("$host","$username","$password","$db");
 if ($dbkonek->connect_error) {
 	echo "koneksi gagal";
 }else{
-	echo "conected";
+	//echo "conected";
 }
 
 

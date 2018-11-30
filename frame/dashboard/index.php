@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-include_once  'conection.php';
+include_once  '../login/conection.php';
 if (isset($_SESSION['login']) != TRUE) {
     header("location: ../login/");
 }
@@ -17,8 +17,10 @@ if (isset($_SESSION['login']) != TRUE) {
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="images/favicon.png">
-    <link rel="shortcut icon" href="images/favicon.png">
+
+
+     <link rel="apple-touch-icon" href="../img/judul.png">
+    <link rel="shortcut icon" href="../img/judul.png"> 
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -261,7 +263,7 @@ if (isset($_SESSION['login']) != TRUE) {
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="nav-link" onclick="<?php session_unset()?>" href="../login/"  ><i class="fa fa-power-off"></i>Logout</a>
                         </div>
                     </div> 
                 </div>  
@@ -336,9 +338,16 @@ if (isset($_SESSION['login']) != TRUE) {
                                     <i class="pe-7f-users"></i>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="text-left dib"> 
-                                        <div class="stat-text"><span class="count">2986</span></div>
-                                        <div class="stat-heading">Clients</div>
+                                    <div class="text-left dib">         
+                                        <?php
+                                        $ambil=$dbkonek->query("select count(ID) as jumlah from customer");
+                                        while ($hasil=mysqli_fetch_array($ambil)) {           
+                                        ?>
+                                        <div class="stat-text"><span class="count"><?php echo $hasil['jumlah'];  ?></span></div> 
+                                        <?php
+                                        }
+                                        ?>                                                   
+                                        <div class="stat-heading">Anggota</div>
                                     </div>
                                 </div>
                             </div>

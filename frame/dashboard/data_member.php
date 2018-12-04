@@ -24,6 +24,9 @@ include_once  '../login/conection.php';
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="assets/data_table/datatables.min.css">
+    <link rel="stylesheet" href="assets/data_table/Select-1.2.6/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/data_table/FixedHeader/css/fixedHeader.bootstrap4.css">
 
 
     <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
@@ -173,16 +176,16 @@ include_once  '../login/conection.php';
         <div class="content pb-0">
 
             <!--  Traffic  -->
-            <div class="row">
+            <div class="row" style="margin:1rem">
                 <div class="col-lg-12">
                     <div class="card">  
                         <div class="card-body">
                             <h4 class="box-title">Data Customer </h4>
                         </div>
-                            <table class=" table table-striped col-lg-12">                             
+                            <table class=" table table-striped " id="member" >                             
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>id Customres</th>
+                                                <th>id Pelanggan</th>
                                                 <th>nama </th>
                                                 <th>Alamat</th>
                                                 <th>Telp</th>
@@ -345,25 +348,28 @@ include_once  '../login/conection.php';
 
     </div><!-- /#right-panel -->
 
+ 
+ 
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/vendor/Jquery3.1.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-    
+       <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
+    <script src="assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
+    <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
 
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/data_table/datatables.min.js"></script>
+    <script src="assets/data_table/select-1.2.6/js/select.bootstrap4.min.js"></script>
+    <script src="assets/data_table/FixedHeader/js/dataTables.fixedHeader.min.js"></script>
+   
 
 
     <!--Chartist Chart-->
     <script src="assets/js/lib/chartist/chartist.min.js"></script>
     <script src="assets/js/lib/chartist/chartist-plugin-legend.js"></script> 
-
-    
-    <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
-
 
     <script src="assets/weather/js/jquery.simpleWeather.min.js"></script>
     <script src="assets/weather/js/weather-init.js"></script>
@@ -375,6 +381,35 @@ include_once  '../login/conection.php';
 
 
 
+<script>
+    jQuery(document).ready(function() {
+   jQuery('#member').DataTable( {
+         "language": {
+            "lengthMenu": "Tampilkan _MENU_ ",
+            "zeroRecords": "Data Tidak Ada",
+            "info": "Halaman _PAGE_ Dari _PAGES_",
+            "infoEmpty": "Data Tidak Ada",
+            "search": "Cari",
+            "paginate": {
+                       "next":       "Lanjut",
+                        "previous":   "Sebelumnya"
+                        },
+            
+            
+        },
+        select: {
+        style: 'single'
+        },
+        fixedHeader: {
+            header: true,
+            footer: true
+        }
+       
+    } );
+} );
+
+
+</script>
 
 
 
@@ -411,32 +446,10 @@ include_once  '../login/conection.php';
                 }
             });
 
-            // Pie chart flotPie1  End
+            // Pie chart flotPie1  En
 
 
-
-
-            var cellPaiChart = [
-                { label: "Direct Sell", data: [[1,65]], color: '#5b83de'},
-                { label: "Channel Sell", data: [[1,35]], color: '#00bfa5'} 
-            ];
-            $.plot('#cellPaiChart', cellPaiChart, {
-                series: {
-                    pie: {
-                        show: true,
-                        stroke: { 
-                            width: 0
-                        }
-                    }
-                },
-                legend: {
-                    show: false
-                },grid: {
-                    hoverable: true,
-                    clickable: true
-                }
-                
-            });
+//data table
 
 
 
@@ -444,160 +457,8 @@ include_once  '../login/conection.php';
 
 
 
-
-
-
-
-
-
-
-
-            // Line Chart  #flotLine5
-            var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
-
-            var plot = $.plot($('#flotLine5'),[{
-                data: newCust,
-                label: 'New Data Flow',
-                color: '#fff'
-            }],
-            {
-                series: {
-                    lines: {
-                        show: true,
-                        lineColor: '#fff',
-                        lineWidth: 2
-                    },
-                    points: {
-                        show: true,
-                        fill: true,
-                        fillColor: "#ffffff",
-                        symbol: "circle",
-                        radius: 3
-                    },
-                    shadowSize: 0
-                },
-                points: {
-                    show: true,
-                },
-                legend: {
-                    show: false
-                },
-                grid: {
-                    show: false
-                }
-            });
-
-             // Line Chart  #flotLine5 End
-
-
- 
-
-
-            // Traffic Chart using chartist
-            if ($('#traffic-chart').length) {
-                var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                  series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
-                  ]
-              }, {
-                  low: 0,
-                  showArea: true,
-                  showLine: false,
-                  showPoint: false,
-                  fullWidth: true,
-                  axisX: {
-                    showGrid: true
-                }
-            });
-
-                chart.on('draw', function(data) {
-                    if(data.type === 'line' || data.type === 'area') {
-                        data.element.animate({
-                            d: {
-                                begin: 2000 * data.index,
-                                dur: 2000,
-                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                to: data.path.clone().stringify(),
-                                easing: Chartist.Svg.Easing.easeOutQuint
-                            }
-                        });
-                    }
-                });
-            }
-            // Traffic Chart using chartist End
 
             
-
-
-            //Traffic chart chart-js 
-            if ($('#TrafficChart').length) {
-                var ctx = document.getElementById( "TrafficChart" );
-                ctx.height = 150;
-                var myChart = new Chart( ctx, {
-                    type: 'line',
-                    data: {
-                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
-                        datasets: [
-                        {
-                            label: "Visit",
-                            borderColor: "rgba(4, 73, 203,.09)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(4, 73, 203,.5)",
-                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
-                        },
-                        {
-                            label: "Bounce",
-                            borderColor: "rgba(245, 23, 66, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(245, 23, 66,.5)",
-                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
-                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
-                        },
-                        {
-                            label: "Targeted",
-                            borderColor: "rgba(40, 169, 46, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(40, 169, 46, .5)",
-                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
-                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0 ]
-                        } 
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        tooltips: {
-                            mode: 'index',
-                            intersect: false
-                        },
-                        hover: {
-                            mode: 'nearest',
-                            intersect: true
-                        }
-
-                    }
-                } );
-            }
-            //Traffic chart chart-js  End 
-
-
-
-            // Bar Chart #flotBarChart
-            $.plot("#flotBarChart", [{
-                data: [[0, 18], [2, 8], [4, 5], [6, 13],[8,5], [10,7],[12,4], [14,6],[16,15], [18, 9],[20,17], [22,7],[24,4], [26,9],[28,11]],
-                bars: {
-                    show: true,
-                    lineWidth: 0,
-                    fillColor: '#ffffff8a'
-                }
-            }], {
-                grid: {
-                    show: false
-                }
-            });
-            // Bar Chart #flotBarChart End
 
         });  // End of Document Ready 
     </script>
@@ -609,7 +470,6 @@ include_once  '../login/conection.php';
   
  
   
-</div>
 
 
 

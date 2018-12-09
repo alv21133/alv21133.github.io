@@ -69,32 +69,34 @@
 					Isi Form Pendaftaran <br>
 					
 				</span>
-				<h4  class="koko">Isi Sesuai Data Diri Anda</h4>
-			 <form>
+				<h4  class="koko">Sesuai Data Diri Anda</h4>
+			 <form method="POST" action="save.php" >
                   <div class="form-group">
                     <label  class="form-text text-muted" for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
+                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap"  required >
                   </div>
                    <div class="form-group">
                         <label class="form-text text-muted" for="exampleFormControlSelect1">Pilih Paket Pendaftaran</label>
-                        <select class="form-control" id="exampleFormControlSelect1"     >
+                        <select class="form-control" id="exampleFormControlSelect1"   name="paket"  required >
                             <option >Silahkan pilih paket</option>
                             <option value="p1" >Paket 1 Rp500.000 belum termasuk alat dan pemasangan</option>
                             <option value="p2">Paket 2 Rp1000.000 sudah termasuk alat dan pemasangan</option>
                         </select>
                     </div>
                    <div class="form-group">
-                    <label  class="form-text text-muted" for="exampleInputEmail1">Nomor HP</label>
-                    <input type="number"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nomor HP">
+                    <label  class="form-text text-muted" for="exampleInputEmail1" >Nomor HP</label>
+                    <input type="number"  name="nomor" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan Nomor HP" required >
                   </div>
 
                   <div class="form-group">
-                    <label class="form-text text-muted" for="exampleFormControlTextarea1">Masukan alamat lengkap anda</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Masukan alamat sesuai dengan Kartu Keluarga" rows="3"></textarea>
+                    <label class="form-text text-muted" for="exampleFormControlTextarea1" >Masukan alamat lengkap anda</label>
+                    <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" placeholder="Masukan alamat sesuai dengan Kartu Keluarga" rows="3" required ></textarea>
                  </div>
                      
-                        <div   style="text-align: center;">
-                    <button  style="" type="submit" class="col-md-4 btn btn-primary" style="margin-right: -300px">Daftar sekarang</button>
+                        <div   style="text-align: center; margin-top:2rem">
+
+            
+                    <button  style="" type="submit" data-toggle="modal" data-target="#exampleModal" class="col-md-4 btn btn-primary" style="margin-right: -300px">Daftar sekarang</button>
                         </div>
                       
             </form>
@@ -110,7 +112,26 @@
 			</div>
 		</div>
 	</div>
-	
+    
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Selamat Pendaftaran Anda Berhasil  !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Selanjutnya Anda Harus Datang Ke kantor Go Water Untuk Melakukan Konfirmasi dan Mendapatkan account sebagai member Go_water.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mengerti</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	<!-- Footer  -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix ">

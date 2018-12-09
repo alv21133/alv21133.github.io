@@ -17,7 +17,7 @@
 				 		$_SESSION['login']=true;
 				 		$_SESSION['user']=$username;
 				 		$_SESSION['pass']=$password;
-				 		header("location: ../dashboard/");
+				 		header("location: ../dashboard/karyawan.php");
 				 	}else{
 				 		?>
 						<script type="text/javascript">alert("username password salah"); 

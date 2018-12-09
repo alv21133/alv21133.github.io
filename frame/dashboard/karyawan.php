@@ -88,9 +88,9 @@ include_once  '../login/conection.php';
                     </li>
                     <li class="menu-title">Go Water Data</li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Member</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="data_member.php">Data Member</a></li>
+                            <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
                             <li><i class="fa fa-pencil"></i><a href="ui-tabs.html">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
@@ -116,15 +116,7 @@ include_once  '../login/conection.php';
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Planing</a></li>
                         </ul>
                     </li>
-                    <div class="col-lg-12">
-                    <div class="card weather-box">
-                        <h4 class="weather-title box-title">Cuaca hari ini</h4>
-                        <div class="card-body">  
-                            <div class="weather-widget">
-                                <div id="weather-one" class="weather-one"></div>
-                            </div> 
-                        </div>
-                    </div><!-- /.card -->
+                  
                 </div>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -151,7 +143,7 @@ include_once  '../login/conection.php';
                 <div class="header-menu"> 
                   <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -183,7 +175,7 @@ include_once  '../login/conection.php';
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
                                         <div class="stat-text">Rp <span class="count">23569</span></div>
-                                        <div class="stat-heading">Revenue</div>
+                                        <div class="stat-heading">Pendapatan</div>
                                     </div>
                                 </div>
                             </div>
@@ -200,8 +192,8 @@ include_once  '../login/conection.php';
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text"><span class="count">3435</span></div>
-                                        <div class="stat-heading">Sales</div> 
+                                        <div class="stat-text">Rp <span class="count">34350</span></div>
+                                        <div class="stat-heading">Pengeluaran</div> 
                                     </div>
                                 </div>
                             </div>
@@ -218,8 +210,8 @@ include_once  '../login/conection.php';
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
-                                        <div class="stat-text"><span class="count">349</span></div>
-                                        <div class="stat-heading">Templates</div>
+                                        <div class="stat-text"><span class="count">68</span></div>
+                                        <div class="stat-heading">Agenda</div>
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +253,7 @@ include_once  '../login/conection.php';
                   <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Status Penggunaan air</h4>
+                                <h4 class="mb-7"style="text-align:center" >Status Penggunaan air</h4>
                                 <div class="flot-container">
                                     <div id="cpu-load" class="cpu-load"></div>
                                 </div>
@@ -272,34 +264,15 @@ include_once  '../login/conection.php';
 
                             <div class="col-lg-4">
                                 <div class="card-body">
-                                    <div class="progress-box progress-1">
-                                        <h4 class="por-title">Visits</h4>
-                                        <div class="por-txt">96,930 Users (40%)</div>
-                                        <div class="progress mb-2" style="height: 5px;">
-                                            <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-box progress-2">
-                                        <h4 class="por-title">Bounce Rate</h4>
-                                        <div class="por-txt">3,220 Users (24%)</div>
-                                        <div class="progress mb-2" style="height: 5px;">
-                                            <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-box progress-2">
-                                        <h4 class="por-title">Unique Visitors</h4>
-                                        <div class="por-txt">29,658 Users (60%)</div>
-                                        <div class="progress mb-2" style="height: 5px;">
-                                            <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="progress-box progress-2">
-                                        <h4 class="por-title">Targeted  Visitors</h4>
-                                        <div class="por-txt">99,658 Users (90%)</div>
-                                        <div class="progress mb-2" style="height: 5px;">
-                                            <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
+                                      <div class="col-lg-12">
+                                            <div class="card weather-box">
+                                                <h4 class="weather-title box-title">Cuaca hari ini</h4>
+                                                <div class="card-body">  
+                                                    <div class="weather-widget">
+                                                        <div id="weather-one" class="weather-one">koko</div>
+                                                    </div> 
+                                                </div>
+                                            </div><!-- /.card -->
                                 </div> <!-- /.card-body -->
                             </div>
                         </div> <!-- /.row --> 
@@ -311,7 +284,7 @@ include_once  '../login/conection.php';
             <!--  Traffic  End -->
 
 
-            <div class="row">
+            <div hidden class="row">
 
                     <div class="col-xl-4">
                         <div class="row"> 
@@ -345,7 +318,7 @@ include_once  '../login/conection.php';
 
 
             <!-- To Do and Live Chat --> 
-            <div class="row">
+            <div hidden class="row">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-9">
                     <div class="card">
@@ -415,7 +388,7 @@ include_once  '../login/conection.php';
 
 
             <!-- Calender Chart Weather  -->
-            <div class="row">
+            <div hidden class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="card">
                         <div class="card-body">  
@@ -509,22 +482,6 @@ include_once  '../login/conection.php';
             </div>
             <!-- END MODAL -->
 
-
-
-            
-
-
-
-
-
-
-
- 
-
-
-
-
-
         </div> <!-- .content -->
 
 
@@ -532,13 +489,15 @@ include_once  '../login/conection.php';
         <div class="clearfix"></div>
 
         <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row">
-                    <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="#">Sasori</a>
+            <div class=" card" >
+                <div class="footer-inner bg-white">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Copyright &copy; 2018 
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            Designed by <a href="#">Sasori</a>
+                        </div>
                     </div>
                 </div>
             </div>

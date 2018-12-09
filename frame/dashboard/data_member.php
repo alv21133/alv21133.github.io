@@ -176,13 +176,13 @@ include_once  '../login/conection.php';
         <div class="content pb-0">
 
             <!--  Traffic  -->
-            <div class="row" style="margin:1rem">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="card">  
-                        <div class="card-body">
-                            <h4 class="box-title">Data Customer </h4>
-                        </div>
-                            <table class=" table table-striped " id="member" >                             
+                        
+                            <h4 class="box-title" style="text-align:center">Data Customer </h4>
+            
+                            <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th>id Pelanggan</th>
@@ -190,12 +190,89 @@ include_once  '../login/conection.php';
                                                 <th>Alamat</th>
                                                 <th>Telp</th>
                                                 <th>Pembayaran</th>
-                                                <th>Edit</th>
-                                                <th>Hapus</th>
+                                                <th>Paket</th>
+                                                <th>Action</th>
+                                                
                                             </tr><br>
                                         </thead>
                                     <?php
-                                    $ambil=$dbkonek->query("select * from customer");
+                                    $ambil=$dbkonek->query("select * from customer where Status='Verifikasi'");
+                                    while ($hasil=mysqli_fetch_array($ambil)) {
+                                            
+                                            ?>
+                                            <tr>
+                                        <td><?php echo $hasil['ID']; ?> </td>
+                                        <td><?php echo $hasil['Nama']; ?> </td>
+                                        <td><?php echo $hasil['Alamat']; ?> </td>
+                                        <td><?php echo $hasil['Telp']; ?> </td>
+                                            
+                                        <?php
+                                                if ($hasil['Pembayaran']== "Lunas") {
+                                                    ?>
+                                                <td class="badge badge-success"><?php echo $hasil['Pembayaran']; ?> </td>
+                                                <?php
+                                                }else{
+                                                    ?>
+                                                  <td class="badge badge-warning"><?php echo $hasil['Pembayaran']; ?> </td> 
+                                                  <?php
+                                                }
+                                        ?>
+                                        <td><?php echo $hasil['paket']; ?> </td>
+                                        
+                                        <td >
+                                                <a href="#" class="ti-settings" ><a/>
+                                                <a href="" class="ti-trash" data-toggle="modal" data-target="#hapus_modal" ></a>
+                                        </td>
+
+
+                                        
+                                      
+                                        
+                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </table>
+                        <div class="row">                              
+                                
+                        </div> <!-- /.row --> 
+
+
+
+                        
+                        <div class="card-body"></div>
+                    </div> 
+                </div><!-- /# column -->
+            </div>
+            <!--  Traffic  End -->
+
+            <div class="clearfix"></div>
+
+
+
+            <!-- tabel2 -->
+            <!--  Traffic  -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">  
+                        
+                            <h4 class="box-title" style="text-align:center">Data Customer Baru</h4>
+            
+                            <table class=" table table-striped " id="member">                             
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>id Pelanggan</th>
+                                                <th>nama </th>
+                                                <th>Alamat</th>
+                                                <th>Telp</th>
+                                                <th>Pembayaran</th>
+                                                <th>Paket</th>
+                                                <th>Action</th>
+                                                
+                                            </tr><br>
+                                        </thead>
+                                    <?php
+                                    $ambil=$dbkonek->query("select * from customer where Status='Belum Verifikasi'");
                                     while ($hasil=mysqli_fetch_array($ambil)) {
                                             
                                             ?>
@@ -216,9 +293,15 @@ include_once  '../login/conection.php';
                                                   <?php
                                                 }
                                         ?>
+                                        <td><?php echo $hasil['paket']; ?> </td>
                                         
-                                        <td class="ti-settings"></td>
-                                        <td class="ti-trash" data-toggle="modal" data-target="#hapus_modal"></td>
+                                        <td >
+                                                <a href="#" class="ti-settings" ><a/>
+                                                <a href="" class="ti-trash" data-toggle="modal" data-target="#hapus_modal" ></a>
+                                        </td>
+
+
+                                        
                                       
                                         
                                     </tr>
@@ -229,20 +312,19 @@ include_once  '../login/conection.php';
                         <div class="row">                              
                                 
                         </div> <!-- /.row --> 
+
+
+
+                        
                         <div class="card-body"></div>
                     </div> 
                 </div><!-- /# column -->
             </div>
             <!--  Traffic  End -->
+        <!-- tabel2 -->
 
-            <div class="clearfix"></div>
-
-
-
-
-
-            <!-- Calender Chart Weather  -->
-            <div class="row">
+            Calender Chart Weather 
+            <div hidden class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="card">
                         <div class="card-body">  
@@ -337,10 +419,10 @@ include_once  '../login/conection.php';
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
+                        Copyright &copy; 2018 
                     </div>
                     <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                        Designed by <a href="#">sasori</a>
                     </div>
                 </div>
             </div>

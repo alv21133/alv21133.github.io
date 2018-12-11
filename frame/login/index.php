@@ -1,3 +1,7 @@
+<?php
+        include_once  'conection.php';
+        include_once   'valid.php'
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -70,7 +74,7 @@
 					
 				</span>
 				<h4  class="koko">Gunakan username & password Anda !</h4>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="valid.php">
+				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="">
 
 					<div class="wrap-input100 validate-input" data-validate = "Masukan username Anda">
 						<input class="input100" type="text" name="username" placeholder="Username">
@@ -83,7 +87,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn" type="submit" name="submit">
+						<button class="login100-form-btn" type="submit" name="submit" value="submit">
 							Login
 						</button>
 					</div>

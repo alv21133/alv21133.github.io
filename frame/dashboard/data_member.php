@@ -92,7 +92,7 @@ include_once  '../login/conection.php';
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="data_member.php">Data Member</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
-                            <li><i class="fa fa-pencil"></i><a href="ui-tabs.html">Konfirmasi Member</a></li>                
+                            <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                                      
                         </ul>
                     </li>
@@ -249,79 +249,6 @@ include_once  '../login/conection.php';
             <div class="clearfix"></div>
 
 
-
-            <!-- tabel2 -->
-            <!--  Traffic  -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">  
-                        
-                            <h4 class="box-title" style="text-align:center">Data Customer Baru</h4>
-            
-                            <table class=" table table-striped " id="member">                             
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th>id Pelanggan</th>
-                                                <th>nama </th>
-                                                <th>Alamat</th>
-                                                <th>Telp</th>
-                                                <th>Pembayaran</th>
-                                                <th>Paket</th>
-                                                <th>Action</th>
-                                                
-                                            </tr><br>
-                                        </thead>
-                                    <?php
-                                    $ambil=$dbkonek->query("select * from customer where Status='Belum Verifikasi'");
-                                    while ($hasil=mysqli_fetch_array($ambil)) {
-                                            
-                                            ?>
-                                            <tr>
-                                        <td><?php echo $hasil['ID']; ?> </td>
-                                        <td><?php echo $hasil['Nama']; ?> </td>
-                                        <td><?php echo $hasil['Alamat']; ?> </td>
-                                        <td><?php echo $hasil['Telp']; ?> </td>
-                                            
-                                        <?php
-                                                if ($hasil['Status']== "Lunas") {
-                                                    ?>
-                                                <td class="badge badge-success"><?php echo $hasil['Status']; ?> </td>
-                                                <?php
-                                                }else{
-                                                    ?>
-                                                  <td class="badge badge-danger"><?php echo $hasil['Status']; ?> </td> 
-                                                  <?php
-                                                }
-                                        ?>
-                                        <td><?php echo $hasil['paket']; ?> </td>
-                                        
-                                        <td >
-                                                <a href="#" class="ti-settings" ><a/>
-                                                <a href="" class="ti-trash" data-toggle="modal" data-target="#hapus_modal" ></a>
-                                        </td>
-
-
-                                        
-                                      
-                                        
-                                    </tr>
-                                    <?php
-                                    }
-                                    ?>
-                                </table>
-                        <div class="row">                              
-                                
-                        </div> <!-- /.row --> 
-
-
-
-                        
-                        <div class="card-body"></div>
-                    </div> 
-                </div><!-- /# column -->
-            </div>
-            <!--  Traffic  End -->
-        <!-- tabel2 -->
 
             Calender Chart Weather 
             <div hidden class="row">

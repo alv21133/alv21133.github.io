@@ -92,7 +92,7 @@ include_once  '../login/conection.php';
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
-                            <li><i class="fa fa-pencil"></i><a href="ui-tabs.html">Konfirmasi Member</a></li>                
+                            <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
                           
                            

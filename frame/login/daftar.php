@@ -1,3 +1,9 @@
+<?php
+include_once'conection.php';
+include_once'valid.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -70,7 +76,7 @@
 					
 				</span>
 				<h4  class="koko">Sesuai Data Diri Anda</h4>
-			 <form method="POST" action="save.php" >
+			 <form method="POST" action="" >
                   <div class="form-group">
                     <label  class="form-text text-muted" for="exampleInputEmail1">Nama Lengkap</label>
                     <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap"  required >

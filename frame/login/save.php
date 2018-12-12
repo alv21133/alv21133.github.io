@@ -24,8 +24,12 @@
 
     if($insert){
 
-        echo"sukses";
-        header("location:../index.html");
+       	echo "<script type='text/javascript'>
+								$(document).ready(function(){
+								$('#salah').modal('show');
+								});
+								</script>
+                			";
     }
             
 ?>

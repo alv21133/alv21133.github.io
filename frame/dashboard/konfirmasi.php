@@ -2,6 +2,7 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
+include_once 'delete_new.php';
 //if (isset($_SESSION['login']) != TRUE) {
  //   header("location: ../login/");
 //}
@@ -119,26 +120,7 @@ include_once  '../login/conection.php';
         </nav>
     </aside><!-- /#left-panel --> 
     <!-- Left Panel -->
-<!-- Modal -->
-<div class="modal fade" id="hapus_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Anda yakin untuk menghapus data ?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Hapus</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>       
-      </div>
-    </div>
-  </div>
-</div>
+
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -180,7 +162,7 @@ include_once  '../login/conection.php';
 
 
 
-            <!-- tabel2 -->
+            <!-- tabel data -->
             <!--  Traffic  -->
             <div class="row">
                 <div class="col-lg-12">
@@ -226,14 +208,18 @@ include_once  '../login/conection.php';
                                         <td><?php echo $hasil['paket']; ?> </td>
                                         
                                         <td >
-                                                <a href="#" class="ti-settings" ><a/>
-                                                <a href="" class="ti-trash" data-toggle="modal" data-target="#hapus_modal" ></a>
-                                        </td>
+                                                    <script>
+                                                        function show() {
+                                                         $('#button1').on('click', function() {
+                                                            $('#hapus_modal').show();
+                                                        });
 
-
-                                        
-                                      
-                                        
+                                                        }
+                                                    
+                                                    </script>
+                                            <a href="#" class="ti-settings" ><a/>
+                                            <a href="delete_new.php?qwz=<?php echo $hasil['ID'];?>" class="ti-trash" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"></a>                                       
+                                      </td>                                                                             
                                     </tr>
                                     <?php
                                     }
@@ -253,95 +239,33 @@ include_once  '../login/conection.php';
             <!--  Traffic  End -->
         <!-- tabel2 -->
 
-            Calender Chart Weather 
-            <div hidden class="row">
-                <div class="col-md-12 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">  
-                            <!-- <h4 class="box-title">Chandler</h4> -->
-                            <div class="calender-cont widget-calender">
-                                <div id="calendar"></div>
-                            </div>
-                        </div>
-                    </div><!-- /.card -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card ov-h">
-                        <div class="card-body bg-flat-color-2"> 
-                            <div id="flotBarChart" class="float-chart ml-4 mr-4"></div>
-                        </div>
-                        <div id="cellPaiChart" class="float-chart"></div> 
-                    </div><!-- /.card -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card weather-box">
-                        <h4 class="weather-title box-title">Cuaca hari ini</h4>
-                        <div class="card-body">  
-                            <div class="weather-widget">
-                                <div id="weather-one" class="weather-one"></div>
-                            </div> 
-                        </div>
-                    </div><!-- /.card -->
-                </div>
-            </div><!-- /.row -->
-            <!-- Calender Chart Weather  End -->
-
-
-            <div class="modal fade none-border" id="event-modal">
-                <div class="modal-dialog">
+                                                    <!-- Modal -->
+                <div class="modal fade" id="hapus_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title"><strong>Add New Event</strong></h4>
-                        </div>
-                        <div class="modal-body"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                        </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Anda yakin untuk menghapus data ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       <?php echo $t_id?>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="konfirmasi.php"><button type="button" class="btn btn-primary">Hapus</button></a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>       
+                    </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Modal Add Category -->
-            <div class="modal fade none-border" id="add-category">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title"><strong>Add a category </strong></h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label">Category Name</label>
-                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Choose Category Color</label>
-                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                            <option value="success">Success</option>
-                                            <option value="danger">Danger</option>
-                                            <option value="info">Info</option>
-                                            <option value="pink">Pink</option>
-                                            <option value="primary">Primary</option>
-                                            <option value="warning">Warning</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <!-- END MODAL -->
+
+
+
+
+
+
+
         </div> <!-- .content -->
         <div class="clearfix"></div>
 
@@ -393,6 +317,13 @@ include_once  '../login/conection.php';
 
 
 
+            <script>
+
+                
+            </script>
+
+
+
 <script>
     jQuery(document).ready(function() {
    jQuery('#member').DataTable( {
@@ -421,11 +352,10 @@ include_once  '../login/conection.php';
 } );
 
 
-</script>
 
 
 
-    <script>
+
         jQuery(document).ready(function($) {
             "use strict"; 
 
@@ -458,22 +388,13 @@ include_once  '../login/conection.php';
                 }
             });
 
-            // Pie chart flotPie1  En
-
-
-//data table
-
-
-
-
-
-
-
-
             
 
         });  // End of Document Ready 
     </script>
+
+
+    
 
 
 

@@ -2,7 +2,6 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
-include_once 'delete_new.php';
 //if (isset($_SESSION['login']) != TRUE) {
  //   header("location: ../login/");
 //}
@@ -217,7 +216,7 @@ include_once 'delete_new.php';
                                                         }
                                                     
                                                     </script>
-                                            <a href="#" class="ti-settings" ><a/>
+                                            <a href="terima_konfirmasi.php?qwz=<?php echo $hasil['ID'];?>" class="ti-settings" onclick="return confirm('Data <?php echo $hasil['Nama'];?> Akan di Konfirmasi..?')" ><a/>                                
                                             <a href="delete_new.php?qwz=<?php echo $hasil['ID'];?>" class="ti-trash" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"></a>                                       
                                       </td>                                                                             
                                     </tr>

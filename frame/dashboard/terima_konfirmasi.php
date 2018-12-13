@@ -11,15 +11,18 @@
 	</head>
 	<body>
 		 <!-- Modal -->
-        <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header text-white" style="background-color:#e206b3;">
-                <h5 class="modal-title  text-white" id="exampleModalLabel">Data Berhasil di Hapus !</h5>
+                <h5 class="modal-title  text-white text-center" id="exampleModalLabel">Data Berhasil di Konfirmasi!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+                    <div class="modal-body text-center">
+                       Silahkan Cek data yang sudah di konfirmasi pada Data Customer !
+                    </div>
             
             <div class="modal-footer">
                 <button onclick="window.location.href='konfirmasi.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
@@ -71,21 +74,22 @@ include_once'../login/conection.php';
 
 
 $id_del=$_GET['qwz'];
+$st="Verifikasi";
 
 
 
-$del=$dbkonek->query("delete from customer where ID='$id_del'");
+$konfirmasi=$dbkonek->query("update customer set Status ='$st' where ID='$id_del'");
 
 
-if ($del) {
+if ($konfirmasi) {
     echo "<script type='text/javascript'>
 								$(document).ready(function(){
-								$('#hapus').modal('show');
+								$('#konfirmasi').modal('show');
 								});
                                 </script>";                        
 
 }else{
-    echo"gagal delete";
+    echo"gagal konfirmasi";
 }
 
 

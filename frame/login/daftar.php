@@ -1,6 +1,6 @@
 <?php
 include_once'conection.php';
-include_once'valid.php';
+include_once'save_member_baru.php';
 
 ?>
 
@@ -76,7 +76,7 @@ include_once'valid.php';
 					
 				</span>
 				<h4  class="koko">Sesuai Data Diri Anda</h4>
-			 <form method="POST" action="" >
+			 <form method="POST" action="">
                   <div class="form-group">
                     <label  class="form-text text-muted" for="exampleInputEmail1">Nama Lengkap</label>
                     <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap"  required >
@@ -99,10 +99,10 @@ include_once'valid.php';
                     <textarea class="form-control" name="alamat" id="exampleFormControlTextarea1" placeholder="Masukan alamat sesuai dengan Kartu Keluarga" rows="3" required ></textarea>
                  </div>
                      
-                        <div   style="text-align: center; margin-top:2rem">
+                        <div  style="text-align: center; margin-top:2rem">
 
             
-                    <button  style="" type="submit" data-toggle="modal" data-target="#exampleModal" class="col-md-4 btn btn-primary" style="margin-right: -300px">Daftar sekarang</button>
+                    <button   type="submit"class="col-md-4 btn btn-primary" name="submit" value="submit" >Daftar sekarang</button>
                         </div>
                       
             </form>
@@ -119,25 +119,6 @@ include_once'valid.php';
 		</div>
 	</div>
     
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Selamat Pendaftaran Anda Berhasil  !</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Selanjutnya Anda Harus Datang Ke kantor Go Water Untuk Melakukan Konfirmasi dan Mendapatkan account sebagai member Go_water.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mengerti</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 	<!-- Footer  -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix ">

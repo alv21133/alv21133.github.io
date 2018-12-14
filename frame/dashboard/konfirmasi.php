@@ -176,7 +176,7 @@ include_once  '../login/conection.php';
                                                 <th>nama </th>
                                                 <th>Alamat</th>
                                                 <th>Telp</th>
-                                                <th>Pembayaran</th>
+                                                <th>Status</th>
                                                 <th>Paket</th>
                                                 <th>Action</th>
                                                 

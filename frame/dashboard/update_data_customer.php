@@ -9,25 +9,24 @@
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	</head>
-	<body>
+	<body >
 		 <!-- Modal -->
         <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header text-white" style="background-color:#e206b3;">
-                <h5 class="modal-title  text-white" id="exampleModalLabel">Data Berhasil di Hapus !</h5>
+            <div class="modal-header text-white" style="background-color:#151616;">
+                <h5 class="modal-title  text-white" id="exampleModalLabel">Data <?php echo $_POST['nama'];?> Berhasil di Perbaharui !</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             
             <div class="modal-footer">
-                <button onclick="window.location.href='konfirmasi.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
+                <button onclick="window.location.href='data_member.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
             </div>
             </div>
         </div>
         </div>
-
 
 
 		<!-- Bootstrap core JavaScript -->
@@ -69,25 +68,31 @@
 
 include_once'../login/conection.php';
 
+if (isset($_POST['submit'])) {
 
-$id_del=$_GET['qwz'];
+            $id=$_POST['id'];
+            $nama=$_POST['nama'];
+            $alamat=$_POST['alamat'];
+            $telp=$_POST['telpon'];
+            $bayar=$_POST['bayar'];
+            $paket=$_POST['paket'];
+            $status=$_POST['status'];
 
+          
+            $up=$dbkonek->query("update customer set Nama='$nama', Alamat='$alamat' , Telp='$telp' , Pembayaran='$bayar' , paket='$paket' , Status='$status'   where ID='$id'");
 
+            if ($up) {
+                echo "<script type='text/javascript'>
+                                            $(document).ready(function(){
+                                            $('#hapus').modal('show');
+                                            });
+                                            </script>";                        
 
-$del=$dbkonek->query("delete from customer where ID='$id_del'");
+            }else{
+                echo"gagal delete";
+                
+            }
 
-
-if ($del) {
-    echo "<script type='text/javascript'>
-								$(document).ready(function(){
-								$('#hapus').modal('show');
-								});
-                                </script>";                        
-
-}else{
-    echo"gagal delete";
-}
-
-
+    }
 
 ?>

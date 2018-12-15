@@ -9,12 +9,12 @@
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	</head>
-	<body>
+	<body >
 		 <!-- Modal -->
         <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header text-white" style="background-color:#e206b3;">
+            <div class="modal-header text-white" style="background-color:#151616;">
                 <h5 class="modal-title  text-white" id="exampleModalLabel">Data Berhasil di Hapus !</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -22,12 +22,11 @@
             </div>
             
             <div class="modal-footer">
-                <button onclick="window.location.href='konfirmasi.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
+                <button onclick="window.location.href='data_member.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
             </div>
             </div>
         </div>
         </div>
-
 
 
 		<!-- Bootstrap core JavaScript -->
@@ -70,7 +69,7 @@
 include_once'../login/conection.php';
 
 
-$id_del=$_GET['qwz'];
+$id_del=$_GET['wx%rq%'];
 
 
 
@@ -86,6 +85,7 @@ if ($del) {
 
 }else{
     echo"gagal delete";
+    
 }
 
 

@@ -31,6 +31,7 @@
 }
 .ti-user:before {
 	content: "\e602";
+
 }
 .ti-unlock:before {
 	content: "\e603";

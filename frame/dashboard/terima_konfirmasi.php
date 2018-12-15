@@ -73,12 +73,13 @@
 include_once'../login/conection.php';
 
 
-$id_del=$_GET['qwz'];
+$id_conf=$_GET['qwz'];
 $st="Verifikasi";
+$bayar="Belum Lunas";
 
 
 
-$konfirmasi=$dbkonek->query("update customer set Status ='$st' where ID='$id_del'");
+$konfirmasi=$dbkonek->query("update customer set Status ='$st' , Pembayaran='$bayar' where ID='$id_conf'");
 
 
 if ($konfirmasi) {

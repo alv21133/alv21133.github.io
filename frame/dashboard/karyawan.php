@@ -84,14 +84,14 @@ include_once  '../login/conection.php';
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="karyawan.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Go Water Data</li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Akun</a></li>
                             <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
                           
@@ -382,10 +382,6 @@ include_once  '../login/conection.php';
             
             </div> <!-- /.row -->
             <!-- To Do and Live Chat End --> 
-
-
-
-
 
             <!-- Calender Chart Weather  -->
             <div hidden class="row">

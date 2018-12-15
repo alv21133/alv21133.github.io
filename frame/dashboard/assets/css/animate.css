@@ -19,6 +19,7 @@
 
 .animated.hinge {
   animation-duration: 2s;
+  
 }
 
 .animated.flipOutX,
@@ -32,6 +33,7 @@
   from, 20%, 53%, 80%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     transform: translate3d(0,0,0);
+    
   }
 
   40%, 43% {

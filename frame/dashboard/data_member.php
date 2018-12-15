@@ -77,7 +77,6 @@ include_once  '../login/conection.php';
 </head>
 <body>
 
-
     <!-- Left Panel --> 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default"> 
@@ -91,7 +90,7 @@ include_once  '../login/conection.php';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="data_member.php">Data Member</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Akun</a></li>
                             <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                                      
                         </ul>
@@ -119,26 +118,6 @@ include_once  '../login/conection.php';
         </nav>
     </aside><!-- /#left-panel --> 
     <!-- Left Panel -->
-<!-- Modal -->
-<div class="modal fade" id="hapus_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Anda yakin untuk menghapus data ?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Hapus</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>       
-      </div>
-    </div>
-  </div>
-</div>
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -185,13 +164,14 @@ include_once  '../login/conection.php';
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>id Pelanggan</th>
-                                                <th>nama </th>
+                                                <th>id</th>
+                                                <th>Nama</th>
                                                 <th>Alamat</th>
                                                 <th>Telp</th>
                                                 <th>Pembayaran</th>
                                                 <th>Paket</th>
-                                                <th>Action</th>
+                                                <th>Edit</th>
+                                                <th>Hapus</th>
                                                 
                                             </tr><br>
                                         </thead>
@@ -201,7 +181,7 @@ include_once  '../login/conection.php';
                                             
                                             ?>
                                             <tr>
-                                        <td><?php echo $hasil['ID']; ?> </td>
+                                        <td><?php echo $hasil['ID']; ?></td>
                                         <td><?php echo $hasil['Nama']; ?> </td>
                                         <td><?php echo $hasil['Alamat']; ?> </td>
                                         <td><?php echo $hasil['Telp']; ?> </td>
@@ -218,10 +198,11 @@ include_once  '../login/conection.php';
                                                 }
                                         ?>
                                         <td><?php echo $hasil['paket']; ?> </td>
+                                        <td><a style="margin-left:1rem;" href="edit_customer.php?%rwz%qr$=<?php echo $hasil['ID']; ?>" class="ti-settings" ></a></td>
                                         
                                         <td >
-                                                <a href="#" class="ti-settings" ><a/>
-                                                <a href="" class="ti-trash" data-toggle="modal" data-target="#hapus_modal" ></a>
+                                                
+                                                <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"  href="delete_customer.php?wx%rq%=<?php echo $hasil['ID']; ?>" class="ti-trash"></a>
                                         </td>
 
 
@@ -250,7 +231,6 @@ include_once  '../login/conection.php';
 
 
 
-            Calender Chart Weather 
             <div hidden class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="card">
@@ -357,8 +337,6 @@ include_once  '../login/conection.php';
 
     </div><!-- /#right-panel -->
 
- 
- 
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/vendor/Jquery3.1.js"></script>

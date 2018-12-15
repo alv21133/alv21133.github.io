@@ -91,7 +91,7 @@ include_once  '../login/conection.php';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="data_member.php">Data Member</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Member</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Akun</a></li>
                             <li><i class="fa fa-pencil"></i><a href="#">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                                      
                         </ul>
@@ -178,7 +178,8 @@ include_once  '../login/conection.php';
                                                 <th>Telp</th>
                                                 <th>Status</th>
                                                 <th>Paket</th>
-                                                <th>Action</th>
+                                                <th>Terima</th>
+                                                <th>Hapus</th>
                                                 
                                             </tr><br>
                                         </thead>
@@ -205,7 +206,9 @@ include_once  '../login/conection.php';
                                                 }
                                         ?>
                                         <td><?php echo $hasil['paket']; ?> </td>
-                                        
+                                        <td>
+                                        <a style="margin-left:2rem;" href="terima_konfirmasi.php?qwz=<?php echo $hasil['ID'];?>" class="ti-slice" onclick="return confirm('Data <?php echo $hasil['Nama'];?> Akan di Konfirmasi..?')" ></a> 
+                                        </td>
                                         <td >
                                                     <script>
                                                         function show() {
@@ -216,7 +219,7 @@ include_once  '../login/conection.php';
                                                         }
                                                     
                                                     </script>
-                                            <a href="terima_konfirmasi.php?qwz=<?php echo $hasil['ID'];?>" class="ti-settings" onclick="return confirm('Data <?php echo $hasil['Nama'];?> Akan di Konfirmasi..?')" ><a/>                                
+                                                                           
                                             <a href="delete_new.php?qwz=<?php echo $hasil['ID'];?>" class="ti-trash" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"></a>                                       
                                       </td>                                                                             
                                     </tr>

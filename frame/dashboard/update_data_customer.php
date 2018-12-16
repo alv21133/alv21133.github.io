@@ -71,7 +71,6 @@
 	</body>
 	</html>
 
-
 <?php
 
 include_once'../login/conection.php';

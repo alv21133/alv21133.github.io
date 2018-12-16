@@ -91,7 +91,7 @@ include_once  '../login/conection.php';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tambah Akun</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="tambah_akun_member.php">Tambah Akun</a></li>
                             <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
                             <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
                           

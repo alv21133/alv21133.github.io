@@ -294,12 +294,8 @@ include_once  'update_data_customer.php';
         </div> <!-- /.row -->
             <!-- To Do and Live Chat End --> 
 
-    
-            
+
 <!-- .content -->
-
-
-
         <div class="clearfix"></div>
         
     <section>

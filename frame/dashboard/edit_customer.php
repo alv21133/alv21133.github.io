@@ -353,8 +353,6 @@ include_once  'update_data_customer.php';
     <script src="assets/js/lib/flot-chart/curvedLines.js"></script>
     <script src="assets/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js"></script>
     <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
-
-
     <script>
         jQuery(document).ready(function($) {
             "use strict"; 

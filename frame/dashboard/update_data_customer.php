@@ -5,8 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Go Water</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-		<script src="main.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	</head>
 	<body >
@@ -35,7 +34,7 @@
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../login/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
@@ -60,6 +59,15 @@
     <script src="../js/footer-reveal.min.js"></script>
     <!-- Active JS -->
     <script src="../js/active.js"></script>
+
+
+<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    
 	</body>
 	</html>
 

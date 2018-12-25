@@ -75,7 +75,7 @@ include_once  '../login/conection.php';
     </style>
 
 </head>
-<body>
+<body style="background-color:#f0f0f8;">
 
 
     <!-- Left Panel --> 
@@ -253,7 +253,9 @@ include_once  '../login/conection.php';
                   <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-7"style="text-align:center" >Status Penggunaan air</h4>
+                               
+                                <h4 class="mb-7"style="text-align:center" >Status Distribusi Air</h4>
+                                <hr>
                                 <div class="flot-container">
                                     <div id="cpu-load" class="cpu-load"></div>
                                 </div>

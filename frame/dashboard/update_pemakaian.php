@@ -7,26 +7,26 @@ include_once  '../login/conection.php';
 //}
 ?>
 
+
 <!doctype html>
 
  <html class="no-js" lang="">
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Member</title>
+    <title>Update Pemkaian</title>
     <meta name="description" content="sasori admin panel">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   
     <link rel="apple-touch-icon" href="../img/judul.png">
-
     <link rel="shortcut icon" href="../img/judul.png"> 
-
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="assets/data_table/datatables.min.css">
+    <link rel="stylesheet" href="assets/data_table/Select-1.2.6/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/data_table/FixedHeader/css/fixedHeader.bootstrap4.css">
 
 
     <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
@@ -77,7 +77,6 @@ include_once  '../login/conection.php';
 </head>
 <body>
 
-
     <!-- Left Panel --> 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default"> 
@@ -86,16 +85,14 @@ include_once  '../login/conection.php';
                     <li class="active">
                         <a href="karyawan.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
-                    <li class="menu-title">Go Water Data</li>
+                    <li class="menu-title">GO WATER PDATA</li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Member</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Member</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="data_member.php">Data Member</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="tambah_akun_member.php">Tambah Akun</a></li>
                             <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
-                            <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
-                          
-                           
+                            <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                                      
                         </ul>
                     </li>
 
@@ -116,17 +113,11 @@ include_once  '../login/conection.php';
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Planing</a></li>
                         </ul>
                     </li>
-                  
-                </div>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-        
     </aside><!-- /#left-panel --> 
     <!-- Left Panel -->
-
-
-
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -143,7 +134,7 @@ include_once  '../login/conection.php';
                 <div class="header-menu"> 
                   <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -163,119 +154,75 @@ include_once  '../login/conection.php';
 
         <div class="content pb-0">
 
-            <!-- Widgets  -->
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-1">
-                                    <i class="pe-7f-cash"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib"> 
-                                        <div class="stat-text">Rp <span class="count">23569</span></div>
-                                        <div class="stat-heading">Pendapatan</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-2">
-                                    <i class="pe-7f-cart"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib">
-                                        <div class="stat-text">Rp <span class="count">34350</span></div>
-                                        <div class="stat-heading">Pengeluaran</div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-3">
-                                    <i class="pe-7f-browser"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib"> 
-                                        <div class="stat-text"><span class="count">68</span></div>
-                                        <div class="stat-heading">Agenda</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-4">
-                                    <i class="pe-7f-users"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib"> 
-                                          <?php
-                                        $ambil=$dbkonek->query("select count(ID) as jumlah from customer");
-                                        while ($hasil=mysqli_fetch_array($ambil)) {           
-                                        ?>
-                                        <div class="stat-text"><span class="count"><?php echo $hasil['jumlah'];  ?></span></div> 
-                                        <?php
-                                        }
-                                        ?>                                                   
-                                        <div class="stat-heading">Anggota</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <!-- Widgets End -->
-
-
             <!--  Traffic  -->
             <div class="row">
-                
-                  <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-7"style="text-align:center" >Status Penggunaan air</h4>
-                                <div class="flot-container">
-                                    <div id="cpu-load" class="cpu-load"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>          
+                <div class="col-lg-12">
+                    <div class="card">  
+                        
+                            <h4 class="box-title" style="text-align:center">Data Pemakaian Customer </h4>
+            
+                            <table class=" table table-striped " id="member">                             
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>ID</th>
+                                                <th>Nama</th>
+                                                <th>Tahun</th>
+                                                <th>Pemakaian Bulan Lalu</th>
+                                                <th>Pemakaian Bulan ini</th>
+                                                <th>Update Data</th>
+                                                <th>Hapus Data</th>
+                                              
+                                                
+                                            </tr><br>
+                                        </thead>
+                                    <?php
+                                    $ambil=$dbkonek->query("select * from pemakaian ");
+                                    while ($hasil=mysqli_fetch_array($ambil)) {
+                                            
+                                            ?>
+                                            <tr class="text-center" >
+                                        <td><?php echo $hasil['No']; ?></td>
+                                        <td><?php echo $hasil['Customer_ID']; ?> </td>
+                                        <td><?php echo $hasil['Customer_ID']; ?> </td>
+                                        <td><?php echo $hasil['Tanggal']; ?> </td>
+                                        <td><?php echo $hasil['Pemakaian_Bulan_Lalu']; ?> </td>
+                                        <td><?php echo $hasil['Pemakaian_Bulan_Ini']; ?> </td>
+<!--                                             
+                                        <?php
+                                                if ($hasil['Pembayaran']== "Lunas") {
+                                                    ?>
+                                                <td class="badge badge-success"><?php echo $hasil['Pembayaran']; ?> </td>
+                                                <?php
+                                                }else{
+                                                    ?>
+                                                  <td class="badge badge-warning"><?php echo $hasil['Pembayaran']; ?> </td> 
+                                                  <?php
+                                                }
+                                        ?> -->
+                                        <!-- <td><?php echo $hasil['paket']; ?> </td> -->
+                                        <td><a style="margin-left:1rem;" href="edit_customer.php?%rwz%qr$=<?php echo $hasil['ID']; ?>" class="btn btn-warning  " >update</a></td>
+                                        
+                                        <td >
+                                                
+                                                <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"  href="delete_customer.php?wx%rq%=<?php echo $hasil['ID']; ?>" class="btn btn-danger text-wight-bold ">Hapus</a>
+                                        </td>
 
 
-                            <div class="col-lg-4">
-                                <div class="card-body">
-                                      <div class="col-lg-12">
-                                            <div class="card weather-box">
-                                                <h4 class="weather-title box-title">Cuaca hari ini</h4>
-                                                <div class="card-body">  
-                                                    <div class="weather-widget">
-                                                        <div id="weather-one" class="weather-one">koko</div>
-                                                    </div> 
-                                                </div>
-                                            </div><!-- /.card -->
-                                </div> <!-- /.card-body -->
-                            </div>
+                                        
+                                      
+                                        
+                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </table>
+                        <div class="row">                              
+                                
                         </div> <!-- /.row --> 
+
+
+
                         
                         <div class="card-body"></div>
                     </div> 
@@ -283,103 +230,10 @@ include_once  '../login/conection.php';
             </div>
             <!--  Traffic  End -->
 
+            <div class="clearfix"></div>
 
-            <div hidden class="row">
 
-                    <div class="col-xl-4">
-                        <div class="row"> 
-                            <div class="col-lg-6 col-xl-12">
-                                <div class="card br-0"> 
-                                    <div class="card-body">
-                                        <div class="chart-container ov-h">
-                                            <div id="flotPie1" class="float-chart"></div>
-                                        </div>
-                                    </div> 
-                                </div><!-- /.card -->
-                            </div>
 
-                            <div class="col-lg-6 col-xl-12">
-                                <div class="card bg-flat-color-3  ">
-                                    <div class="card-body">
-                                        <h4 class="card-title m-0  white-color ">August 2018</h4>
-                                    </div>
-                                     <div class="card-body">
-                                         <div id="flotLine5" class="flot-line"></div>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- /.col-md-4 -->
-                </div> 
-            </div> <!-- /.order -->
-
-            <!-- To Do and Live Chat --> 
-            <div hidden class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-9">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title box-title">kegiatan</h4>
-                            <div class="card-content">
-                                <div class="todo-list">
-                                    <div class="tdl-holder">
-                                        <div class="tdl-content">
-                                            <ul>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox"><i class="check-box"></i><span>Conveniently fabricate interactive technology for ....</span> 
-                                                        <a href='#' class="fa fa-times"></a>
-                                                        <a href='#' class="fa fa-pencil"></a>
-                                                        <a href='#' class="fa fa-check"></a>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox"><i class="check-box"></i><span>Creating component page</span>
-                                                        <a href='#' class="fa fa-times"></a>
-                                                        <a href='#' class="fa fa-pencil"></a>
-                                                        <a href='#' class="fa fa-check"></a>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i class="check-box"></i><span>Follow back those who follow you</span>
-                                                        <a href='#' class="fa fa-times"></a>
-                                                        <a href='#' class="fa fa-pencil"></a>
-                                                        <a href='#' class="fa fa-check"></a>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i class="check-box"></i><span>Design One page theme</span>
-                                                        <a href='#' class="fa fa-times"></a>
-                                                        <a href='#' class="fa fa-pencil"></a>
-                                                        <a href='#' class="fa fa-check"></a>
-                                                    </label>
-                                                </li>
-
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" checked><i class="check-box"></i><span>Creating component page</span>
-                                                        <a href='#' class="fa fa-times"></a>
-                                                        <a href='#' class="fa fa-pencil"></a>
-                                                        <a href='#' class="fa fa-check"></a>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div> 
-                                    </div>
-                                </div> <!-- /.todo-list -->
-                            </div>
-                        </div> <!-- /.card-body -->
-                    </div><!-- /.card -->
-                </div>
-
-            
-            </div> <!-- /.row -->
-            <!-- To Do and Live Chat End --> 
-
-            <!-- Calender Chart Weather  -->
             <div hidden class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="card">
@@ -402,7 +256,7 @@ include_once  '../login/conection.php';
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card weather-box">
-                        <h4 class="weather-title box-title">Weather</h4>
+                        <h4 class="weather-title box-title">Cuaca hari ini</h4>
                         <div class="card-body">  
                             <div class="weather-widget">
                                 <div id="weather-one" class="weather-one"></div>
@@ -412,6 +266,7 @@ include_once  '../login/conection.php';
                 </div>
             </div><!-- /.row -->
             <!-- Calender Chart Weather  End -->
+
 
             <div class="modal fade none-border" id="event-modal">
                 <div class="modal-dialog">
@@ -467,23 +322,17 @@ include_once  '../login/conection.php';
                 </div>
             </div>
             <!-- END MODAL -->
-
         </div> <!-- .content -->
-
-
-
         <div class="clearfix"></div>
 
         <footer class="site-footer">
-            <div class=" card" >
-                <div class="footer-inner bg-white">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            Copyright &copy; 2018 
-                        </div>
-                        <div class="col-sm-6 text-right">
-                            Designed by <a href="#">Sasori</a>
-                        </div>
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2018 
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Designed by <a href="#">sasori</a>
                     </div>
                 </div>
             </div>
@@ -493,22 +342,24 @@ include_once  '../login/conection.php';
 
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/vendor/Jquery3.1.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+       <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
+    <script src="assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
+    <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
 
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/data_table/datatables.min.js"></script>
+    <script src="assets/data_table/select-1.2.6/js/select.bootstrap4.min.js"></script>
+    <script src="assets/data_table/FixedHeader/js/dataTables.fixedHeader.min.js"></script>
+   
 
 
     <!--Chartist Chart-->
     <script src="assets/js/lib/chartist/chartist.min.js"></script>
     <script src="assets/js/lib/chartist/chartist-plugin-legend.js"></script> 
-
-    
-    <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
-
 
     <script src="assets/weather/js/jquery.simpleWeather.min.js"></script>
     <script src="assets/weather/js/weather-init.js"></script>
@@ -517,18 +368,38 @@ include_once  '../login/conection.php';
     <script src="assets/js/lib/moment/moment.js"></script>
     <script src="assets/calendar/fullcalendar.min.js"></script>
     <script src="assets/calendar/fullcalendar-init.js"></script>
-     <script src="assets/js/lib/flot-chart/excanvas.min.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.time.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.stack.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.resize.js"></script>
-    <script src="assets/js/lib/flot-chart/jquery.flot.crosshair.js"></script>
-    <script src="assets/js/lib/flot-chart/curvedLines.js"></script>
-    <script src="assets/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-    <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
 
 
 
+<script>
+    jQuery(document).ready(function() {
+   jQuery('#member').DataTable( {
+         "language": {
+            "lengthMenu": "Tampilkan _MENU_ ",
+            "zeroRecords": "Data Tidak Ada",
+            "info": "Halaman _PAGE_ Dari _PAGES_",
+            "infoEmpty": "Data Tidak Ada",
+            "search": "Cari",
+            "paginate": {
+                       "next":       "Lanjut",
+                        "previous":   "Sebelumnya"
+                        },
+            
+            
+        },
+        select: {
+        style: 'single'
+        },
+        fixedHeader: {
+            header: true,
+            footer: true
+        }
+       
+    } );
+} );
 
+
+</script>
 
 
 
@@ -565,32 +436,10 @@ include_once  '../login/conection.php';
                 }
             });
 
-            // Pie chart flotPie1  End
+            // Pie chart flotPie1  En
 
 
-
-
-            var cellPaiChart = [
-                { label: "Direct Sell", data: [[1,65]], color: '#5b83de'},
-                { label: "Channel Sell", data: [[1,35]], color: '#00bfa5'} 
-            ];
-            $.plot('#cellPaiChart', cellPaiChart, {
-                series: {
-                    pie: {
-                        show: true,
-                        stroke: { 
-                            width: 0
-                        }
-                    }
-                },
-                legend: {
-                    show: false
-                },grid: {
-                    hoverable: true,
-                    clickable: true
-                }
-                
-            });
+//data table
 
 
 
@@ -598,160 +447,8 @@ include_once  '../login/conection.php';
 
 
 
-
-
-
-
-
-
-
-
-            // Line Chart  #flotLine5
-            var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
-
-            var plot = $.plot($('#flotLine5'),[{
-                data: newCust,
-                label: 'New Data Flow',
-                color: '#fff'
-            }],
-            {
-                series: {
-                    lines: {
-                        show: true,
-                        lineColor: '#fff',
-                        lineWidth: 2
-                    },
-                    points: {
-                        show: true,
-                        fill: true,
-                        fillColor: "#ffffff",
-                        symbol: "circle",
-                        radius: 3
-                    },
-                    shadowSize: 0
-                },
-                points: {
-                    show: true,
-                },
-                legend: {
-                    show: false
-                },
-                grid: {
-                    show: false
-                }
-            });
-
-             // Line Chart  #flotLine5 End
-
-
- 
-
-
-            // Traffic Chart using chartist
-            if ($('#traffic-chart').length) {
-                var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                  series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
-                  ]
-              }, {
-                  low: 0,
-                  showArea: true,
-                  showLine: false,
-                  showPoint: false,
-                  fullWidth: true,
-                  axisX: {
-                    showGrid: true
-                }
-            });
-
-                chart.on('draw', function(data) {
-                    if(data.type === 'line' || data.type === 'area') {
-                        data.element.animate({
-                            d: {
-                                begin: 2000 * data.index,
-                                dur: 2000,
-                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                to: data.path.clone().stringify(),
-                                easing: Chartist.Svg.Easing.easeOutQuint
-                            }
-                        });
-                    }
-                });
-            }
-            // Traffic Chart using chartist End
 
             
-
-
-            //Traffic chart chart-js 
-            if ($('#TrafficChart').length) {
-                var ctx = document.getElementById( "TrafficChart" );
-                ctx.height = 150;
-                var myChart = new Chart( ctx, {
-                    type: 'line',
-                    data: {
-                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
-                        datasets: [
-                        {
-                            label: "Visit",
-                            borderColor: "rgba(4, 73, 203,.09)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(4, 73, 203,.5)",
-                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
-                        },
-                        {
-                            label: "Bounce",
-                            borderColor: "rgba(245, 23, 66, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(245, 23, 66,.5)",
-                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
-                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
-                        },
-                        {
-                            label: "Targeted",
-                            borderColor: "rgba(40, 169, 46, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(40, 169, 46, .5)",
-                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
-                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0 ]
-                        } 
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        tooltips: {
-                            mode: 'index',
-                            intersect: false
-                        },
-                        hover: {
-                            mode: 'nearest',
-                            intersect: true
-                        }
-
-                    }
-                } );
-            }
-            //Traffic chart chart-js  End 
-
-
-
-            // Bar Chart #flotBarChart
-            $.plot("#flotBarChart", [{
-                data: [[0, 18], [2, 8], [4, 5], [6, 13],[8,5], [10,7],[12,4], [14,6],[16,15], [18, 9],[20,17], [22,7],[24,4], [26,9],[28,11]],
-                bars: {
-                    show: true,
-                    lineWidth: 0,
-                    fillColor: '#ffffff8a'
-                }
-            }], {
-                grid: {
-                    show: false
-                }
-            });
-            // Bar Chart #flotBarChart End
 
         });  // End of Document Ready 
     </script>
@@ -763,7 +460,6 @@ include_once  '../login/conection.php';
   
  
   
-</div>
 
 
 

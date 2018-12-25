@@ -160,7 +160,20 @@ include_once  '../login/conection.php';
 
 
         <div class="content pb-0">
+                <?php
+                $user=$dbkonek->query("select ID,Nama, Saldo, pemakaian.Tanggal , pemakaian.Pemakaian_Bulan_Ini, transaksi.Biaya, transaksi.Tanggal_Bayar from customer join pemakaian on ID = pemakaian.Customer_ID join transaksi on ID = transaksi.Customer_ID where ID = 'C0007' ORDER BY Tanggal DESC LIMIT 1
+                                    ");
+                
+                    while ($data=mysqli_fetch_array($user)) 
+                    {
 
+                        
+                        
+                        
+                ?>
+                    
+                       
+               
             <!-- Widgets  -->
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -169,18 +182,20 @@ include_once  '../login/conection.php';
                             <div class="stat-widget-five">
                                 <div class="stat-icon dib flat-color-1">
                                     <i class="pe-7f-cart "></i>
-                                </div>
+                                </div>                    
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
-                                        <div class="stat-text">Rp <span class="count">23569</span></div>
+                                        <div class="stat-text"><span class="count"><?php echo $data['Pemakaian_Bulan_Ini']?></span> m<sup>3</sup></div>
+                                        
                                         <div class="stat-heading">Pemakaian </div>
+                                        <div style="position:absolute" class="stat-heading"><?php  echo $newDate = date("d-m-Y", strtotime($data['Tanggal'])); ?></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+     
                 <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -190,7 +205,7 @@ include_once  '../login/conection.php';
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">Rp <span class="count">34350</span></div>
+                                        <div class="stat-text">Rp <span class="count"><?php echo $data['Biaya'] ?></span></div>
                                         <div class="stat-heading">Biaya</div> 
                                     </div>
                                 </div>
@@ -198,7 +213,6 @@ include_once  '../login/conection.php';
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -208,7 +222,7 @@ include_once  '../login/conection.php';
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
-                                        <div class="stat-text"><span class="count">68</span></div>
+                                        <div class="stat-text"><span class="count"><?php echo $data['Saldo'] ?></span></div>
                                         <div class="stat-heading">Saldo</div>
                                     </div>
                                 </div>
@@ -216,7 +230,11 @@ include_once  '../login/conection.php';
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
 
+                ?>
+             
                 <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">

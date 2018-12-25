@@ -2,34 +2,26 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
-include_once  'update_data_customer.php';
 //if (isset($_SESSION['login']) != TRUE) {
  //   header("location: ../login/");
 //}
-
 ?>
 
 <!doctype html>
 
  <html class="no-js" lang="">
-<head>
- <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Edit Data Member</title>
-    <meta name="description" content="sasori admin panel">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head  >
+<meta charset="utf-8">
+    
     <link rel="apple-touch-icon" href="../img/judul.png">
 
     <link rel="shortcut icon" href="../img/judul.png"> 
-    
+
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="assets/data_table/datatables.min.css">
-    <link rel="stylesheet" href="assets/data_table/Select-1.2.6/css/select.bootstrap4.min.css">
-    <link rel="stylesheet" href="assets/data_table/FixedHeader/css/fixedHeader.bootstrap4.css">
 
 
     <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
@@ -38,6 +30,9 @@ include_once  'update_data_customer.php';
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="assets/css/charts/chartist.min.css" rel="stylesheet"> 
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet"> 
+
+
+
 
     <style>
     #weatherWidget .currentDesc {
@@ -77,48 +72,49 @@ include_once  'update_data_customer.php';
     </style>
 
 </head>
-<body>
-
+<body style=" background-image: url(../img/bg-img/welcome-bg.png);
+    height: 900px;
+    position: relative;
+    z-index: 1;
+    background-position: bottom center;
+    background-size: cover;"> 
 
     <!-- Left Panel --> 
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default"> 
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+    <aside id="left-panel" class="left-panel "  >
+        <nav class="navbar navbar-expand-sm navbar-default"  > 
+            <div id="main-menu" class="main-menu collapse navbar-collapse" >
+                <ul class="nav navbar-nav" >
                     <li class="active">
-                        <a href="karyawan.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="dashboard_member.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
-                    <li class="menu-title">Go Water Data</li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Member</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-user"></i><a href="data_member.php">Data Member</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="tambah_akun_member.php">Tambah Akun</a></li>
-                            <li><i class="fa fa-pencil"></i><a href="konfirmasi.php">Konfirmasi Member</a></li>                
-                            <li><i class="fa fa-flash"></i><a href="ui-tabs.html">Invoice</a></li>                
-                          
-                           
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">Data Keuangan</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Keuangan</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Keuangan</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Transaksi</a></li>
-                            <li><i class="fa fa-dollar "></i><a href="maps-vector.html">Kerusakan</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Agenda</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Kegiatan</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Pengunguman</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Planing</a></li>
-                        </ul>
-                    </li>
-                  
+                    <div class="card" >
+                        <div class="card-header">Lapor Kerusakan</div>
+                        <div class="card-body card-block">
+   <!--input -->           <form action="#" method="post" class="">  
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <!-- <div class="input-group-addon">Username</div> -->
+                                        <input type="text" id="username3" name="judul_rusak" class="form-control" placeholder="Nama ">
+                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                
+                                        <div class="col-12 col-md-12"><textarea name="detail" id="textarea-input" rows="9" placeholder="Detail Kerusakan..." class="form-control"></textarea></div>
+                                    </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <!-- <div class="input-group-addon">Password</div> -->
+                                        <input type="password" id="password3" name="Lokasi_rusak" class="form-control" placeholder="Lokasi Kerusakan.." >
+                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                                    </div>
+                                </div>
+                                <div class="form-actions form-group" style="text-align:center" >
+                                    <input type="submit" name="submit" class="btn btn-primary btn-sm" value=" kirim "></input>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -162,143 +158,131 @@ include_once  'update_data_customer.php';
         </header><!-- /header -->
         <!-- Header-->
 
+
         <div class="content pb-0">
 
-
-         <!--  Traffic   tabel detail customers-->
+            <!-- Widgets  -->
             <div class="row">
-            <?php 
-                        $id=$_GET['%rwz%qr$'];      
-                        $view=$dbkonek->query("select * from customer where ID='$id'");
-                        while ($data=mysqli_fetch_array($view)) {
-                                            
-                             ?>
-                  <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-7 font-weight-bold" >ID : <?php echo $data['ID']?> <h4 class="mb-7 font-weight-bold" style="text-align:center"><?php echo $data['Nama']?></h4></h4>                                    
-                                    <form action="" method="POST">
-                                        
-                                            
-                                            <div class="row"> 
-                                                <div class="col-md-3">
-                                                    <img   src="../dashboard/images/user.png" style=" width:200px;" ></img>
-                                                    </div>
-                                            
-
-                                                 <div class="col-md-9">
-                                                        <div class="form-row ">
-
-                                                               <input hidden name="id" value="<?php echo $data['ID']?>"></input>    
-                                                                <div class="col-md-6 mb-3">
-                                                                    <label for="validationServer01">Nama</label>
-                                                                    <input type="text" name="nama" class="form-control is-valid" id="validationServer01"  value="<?php echo $data['Nama']?>" required>
-                                                                        <div class="valid-feedback">
-                                                                                GoWater Data !
-                                                                    </div>
-                                                                </div>
-                                                                    
-                                                            <div class="col-md-6 mb-3">
-                                                                    <label for="validationServer02">Alamat</label>
-                                                                    <input type="text" name="alamat"class="form-control is-valid" id="validationServer02" value="<?php echo $data['Alamat']?>" required>
-                                                                            <div class="valid-feedback">
-                                                                                GoWater Data ! 
-                                                                     </div>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                <!-- row2 -->
-                                                <div class="form-row">
-                                                  
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="validationServer01">No Telepon</label>
-                                                        <input type="text" name="telpon" class="form-control is-valid" id="validationServer01"  value="<?php echo $data['Telp']?>" required>
-                                                                <div class="valid-feedback">
-                                                                     GoWater Data !
-                                                                </div>
-                                                    </div>
-                                                    <div class="col-md-6 mb-3">
-                                                            <label for="validationServer02">Status Pembayaran</label>
-                                                            <!-- <input type="text" name="bayar" class="form-control is-valid" id="validationServer02" value=required> -->
-                                                            <select class="form-control is-valid" name="bayar" id="validationServer02">
-                                                                <option value="<?php echo $data['Pembayaran']?>"><?php echo $data['Pembayaran']?> </option>
-                                                                    <?php
-                                                                    if ($data['Pembayaran']==Lunas) {
-                                                                        echo"<option value='Belum Lunas'>Belum Lunas</option>";
-                                                                    }else{
-                                                                        echo"<option value='Lunas'>Lunas</option>";
-                                                                    }
-                                                                    ?>
-                                                                
-                                                            </select>  
-                                                            
-                                                            
-                                                            <div class="valid-feedback">
-                                                                        GoWater Data !
-                                                                    </div>
-                                                    </div>
-                                                            
-                                                </div>
-                                                <!-- row3 -->
-                                                <div class="form-row">
-                                                    
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="validationServer01">Paket</label>
-                                                        <input type="text" name="paket" class="form-control is-valid" id="validationServer01"  value="<?php echo $data['paket']?>" required>
-                                                                <div class="valid-feedback">
-                                                                     GoWater Data !
-                                                                </div>
-                                                    </div>
-                                                            <div class="col-md-6 mb-3">
-                                                                <label for="validationServer02">Status Customer</label>
-                                                                <input type="text" name="status" class="form-control is-valid" id="validationServer02" value="<?php echo $data['Status']?>" required>
-                                                                        <div class="valid-feedback">
-                                                                            GoWater Data !
-                                                                        </div>
-                                                            </div>
-                                                            
-                                                              </div>
-                                                            </div>
-                                                         <div class="col-md-1"></div>
-                                          
-                                             
-                                                    </div> <!-- row -->
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div style="text-align:center;">
-                                                                <input class="btn btn-info" type="submit" name="submit" value="Simpan"></input>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                    }
-                                                    ?>
-                                         </form>
-
-                                    
-                                      
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-1">
+                                    <i class="pe-7f-cart "></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib"> 
+                                        <div class="stat-text">Rp <span class="count">23569</span></div>
+                                        <div class="stat-heading">Pemakaian </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>         
+                    </div>
+                </div>
 
-                    <!-- ahir form  -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-2">
+                                    <i class="pe-7f-browser"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib">
+                                        <div class="stat-text">Rp <span class="count">34350</span></div>
+                                        <div class="stat-heading">Biaya</div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-3">
+                                    <i class="pe-7f-cash"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib"> 
+                                        <div class="stat-text"><span class="count">68</span></div>
+                                        <div class="stat-heading">Saldo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-4">
+                                    <i class="pe-7f-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib"> 
+                                          <?php
+                                        $ambil=$dbkonek->query("select count(ID) as jumlah from customer");
+                                        while ($hasil=mysqli_fetch_array($ambil)) {           
+                                        ?>
+                                        <div class="stat-text"><span class="count"><?php echo $hasil['jumlah'];  ?></span></div> 
+                                        <?php
+                                        }
+                                        ?>                                                   
+                                        <div class="stat-heading">Agenda</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- Widgets End -->
+
+            <!--  Traffic  -->
+            <div class="row">
+                
+                  <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-7"style="text-align:center " >Status Penggunaan Saya </h4>
+                                <div class="flot-container">
+                                     <canvas id="team-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
 
 
-            
-            </div> <!-- /.order -->
+                            <div class="col-lg-4">
+                                <div class="card-body">
+                                      <div class="col-lg-12">
+                                            <div class="card weather-box">
+                                                <h4 class="weather-title box-title">Cuaca hari ini</h4>
+                                                <div class="card-body">  
+                                                    <div class="weather-widget">
+                                                        <div id="weather-one" class="weather-one">koko</div>
+                                                    </div> 
+                                                </div>
+                                            </div><!-- /.card -->
+                                </div> <!-- /.card-body -->
+                            </div>
+                        </div> <!-- /.row --> 
+                        
+                        <div class="card-body"></div>
+                    </div> 
+                </div><!-- /# column -->
+            </div>
+            <!--  Traffic  End -->
 
 
-
-
-
-        </div> <!-- /.row -->
-            <!-- To Do and Live Chat End --> 
-
-
-<!-- .content -->
         <div class="clearfix"></div>
-        
-    <section>
+
         <footer class="site-footer">
             <div class=" card" >
                 <div class="footer-inner bg-white">
@@ -313,10 +297,11 @@ include_once  'update_data_customer.php';
                 </div>
             </div>
         </footer>
-    </section>
+
     </div><!-- /#right-panel -->
 
-   <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+
+     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
@@ -349,11 +334,20 @@ include_once  'update_data_customer.php';
     <script src="assets/js/lib/flot-chart/curvedLines.js"></script>
     <script src="assets/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js"></script>
     <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
+
+    <!--  Chart js -->
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/js/lib/chart-js/chartjs-init.js"></script>
+
+
+
+
+
     <script>
         jQuery(document).ready(function($) {
             "use strict"; 
 
-            
+            // Pie chart flotPie1 
             var piedata = [
                 { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},
                 { label: "Tab visits", data: [[1,33]], color: '#ef5350'},
@@ -384,6 +378,9 @@ include_once  'update_data_customer.php';
 
             // Pie chart flotPie1  End
 
+
+
+
             var cellPaiChart = [
                 { label: "Direct Sell", data: [[1,65]], color: '#5b83de'},
                 { label: "Channel Sell", data: [[1,35]], color: '#00bfa5'} 
@@ -405,6 +402,20 @@ include_once  'update_data_customer.php';
                 }
                 
             });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             // Line Chart  #flotLine5
             var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];

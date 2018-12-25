@@ -417,12 +417,6 @@ include_once  '../login/conection.php';
             </div><!-- /.row -->
             <!-- Calender Chart Weather  End -->
 
-
-
-
-
-
-
             <div class="modal fade none-border" id="event-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">

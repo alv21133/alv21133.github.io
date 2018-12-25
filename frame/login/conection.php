@@ -2,7 +2,7 @@
 $host="localhost";
 $username="root";
 $password="";
-$db="gowater";
+$db="gowater_update";
 
 $dbkonek= new mysqli ("$host","$username","$password","$db");
 

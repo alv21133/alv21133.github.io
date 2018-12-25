@@ -406,6 +406,8 @@ p {
     position: fixed;
     top: 0;
     z-index: 99;
+
+   
 }
 
 .header_area.sticky .menu_area .navbar-brand {

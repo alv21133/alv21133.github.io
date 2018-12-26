@@ -68,7 +68,7 @@
 	<?php
 		session_start();
 		include_once  'conection.php';
-		// error_reporting(0);		
+		 error_reporting(0);		
 
 			if (isset($_POST['submit'])) {
 				$username=$_POST['username'];
@@ -76,18 +76,19 @@
 
 				
 
-				$data=$dbkonek->query("SELECT * FROM login WHERE username='$username' LIMIT 1");
+				$data=$dbkonek->query("SELECT * FROM customer WHERE Nama='$username' AND Password='$password' LIMIT 1");
 				$count=mysqli_num_rows($data);
 				while ($p_data=mysqli_fetch_array($data)) {
-				$d_hash=$p_data['Password'];
+				$id=$p_data['ID'];
 
 				}
 			
-				 if (password_verify($password,$d_hash)) {
+				 if ($count!= null) {
 				 		$_SESSION['login']=true;
 				 		$_SESSION['user']=$username;
 				 		$_SESSION['pass']=$password;
-				 		header("location: ../dashboard/karyawan.php");
+                        $_SESSION['unix']=$id;
+				 		header("location: ../dashboard/dashboard_member.php");
 				 	}else{
 						 
 						

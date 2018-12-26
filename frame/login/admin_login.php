@@ -1,6 +1,6 @@
 <?php
         include_once  'conection.php';
-        include_once   'valid_user.php'
+        include_once   'valid.php'
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +70,7 @@
 		<div class="container-login100" style="background-image: url('../img/bg-img/welcome-bg.png');">
 			<div class="wrap-login70 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41 "  >
-					SILAHKAN MASUK <br>
+					LOGIN ADMIN <br>
 					
 				</span>
 				<h4  class="koko">Gunakan username & password Anda !</h4>

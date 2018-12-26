@@ -1,10 +1,13 @@
 <?php
 //error_reporting(0);
-//session_start();
+session_start();
+
 include_once  '../login/conection.php';
-//if (isset($_SESSION['login']) != TRUE) {
- //   header("location: ../login/");
-//}
+if (isset($_SESSION['user']) == null) {
+   header("location: ../login/");
+ 
+}else{
+
 ?>
 
 <!doctype html>
@@ -132,7 +135,7 @@ include_once  '../login/conection.php';
         <header id="header" class="header">  
             <div class="top-left">
                 <div class="navbar-header"> 
-                    <a class="navbar-brand" href="./"><img style="width: 70px; height:45px" src="../img/logo_admin.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img style="width: 70px; height:45px" src="../img/logo_gowater.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> 
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> 
                 </div> 
@@ -150,7 +153,7 @@ include_once  '../login/conection.php';
                             <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-                            <a class="nav-link" onclick="<?php session_unset()?>" href="../login/"  ><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="nav-link" onclick="<?php ?>" href="../login/"  ><i class="fa fa-power-off"></i>Logout</a>
                         </div>
                     </div> 
                 </div>  
@@ -161,7 +164,10 @@ include_once  '../login/conection.php';
 
         <div class="content pb-0">
                 <?php
-                $user=$dbkonek->query("select ID,Nama, Saldo, pemakaian.Tanggal , pemakaian.Pemakaian_Bulan_Ini, transaksi.Biaya, transaksi.Tanggal_Bayar from customer join pemakaian on ID = pemakaian.Customer_ID join transaksi on ID = transaksi.Customer_ID where ID = 'C0007' ORDER BY Tanggal DESC LIMIT 1
+               
+                $user=$_SESSION['unix'];
+               
+                $user=$dbkonek->query("select ID,Nama, Saldo, pemakaian.Tanggal , pemakaian.Pemakaian_Bulan_Ini, transaksi.Biaya, transaksi.Tanggal_Bayar from customer join pemakaian on ID = pemakaian.Customer_ID join transaksi on ID = transaksi.Customer_ID where ID = '$user' ORDER BY Tanggal DESC LIMIT 1
                                     ");
                 
                     while ($data=mysqli_fetch_array($user)) 
@@ -292,7 +298,9 @@ include_once  '../login/conection.php';
                             </div>
                         </div> <!-- /.row --> 
                         
-                        <div class="card-body"></div>
+                        <div class="card-body">
+                           
+                        </div>
                     </div> 
                 </div><!-- /# column -->
             </div>
@@ -598,3 +606,7 @@ include_once  '../login/conection.php';
 
 </body>
 </html>
+
+<?php
+}
+?>

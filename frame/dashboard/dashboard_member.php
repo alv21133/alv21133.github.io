@@ -144,7 +144,8 @@ if (isset($_SESSION['user']) == null) {
                 <div class="header-menu"> 
                   <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
+                          <h5 style="margin:19px;" ><?php echo $_SESSION['user']; ?></h5 style="margin:3px;" >
+                        <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -153,7 +154,7 @@ if (isset($_SESSION['user']) == null) {
                             <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
-                            <a class="nav-link" onclick="<?php ?>" href="../login/"  ><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="nav-link" href="../dashboard/keluar.php"  ><i class="fa fa-power-off"></i>Logout</a>
                         </div>
                     </div> 
                 </div>  
@@ -178,8 +179,7 @@ if (isset($_SESSION['user']) == null) {
                         
                 ?>
                     
-                       
-               
+                               
             <!-- Widgets  -->
             <div class="row">
                 <div class="col-lg-3 col-md-6">

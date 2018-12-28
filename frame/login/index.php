@@ -73,7 +73,7 @@
 					SILAHKAN MASUK <br>
 					
 				</span>
-				<h4  class="koko">Gunakan username & password Anda !</h4>
+				<h4  class="koko">Gunakan username & password Anda </h4>
 				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="">
 
 					<div class="wrap-input100 validate-input" data-validate = "Masukan username Anda">

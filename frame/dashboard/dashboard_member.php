@@ -1,5 +1,6 @@
 <?php
 //error_reporting(0);
+
 session_start();
 
 include_once  '../login/conection.php';
@@ -8,6 +9,7 @@ if (isset($_SESSION['user']) == null) {
  
 }else{
 
+include_once'simpan_laporan_kerusakan.php';
 ?>
 
 <!doctype html>
@@ -91,13 +93,13 @@ if (isset($_SESSION['user']) == null) {
                         <a href="dashboard_member.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <div class="card" >
-                        <div class="card-header">Lapor Kerusakan</div>
+                        <div class="card-header font-weight-bold" style="text-align:center">Lapor Kerusakan</div>
                         <div class="card-body card-block">
-   <!--input -->           <form action="#" method="post" class="">  
+   <!--input -->           <form action="" method="POST" class="">  
                                 <div class="form-group">
                                     <div class="input-group">
                                         <!-- <div class="input-group-addon">Username</div> -->
-                                        <input type="text" id="username3" name="judul_rusak" class="form-control" placeholder="Nama ">
+                                        <input type="text" readonly id="username3" name="id" class="form-control " style="text-align:center; color:Black" placeholder="Nama " value="<?php echo $_SESSION['unix'] ?>">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
                                     </div>
                                 </div>
@@ -108,7 +110,7 @@ if (isset($_SESSION['user']) == null) {
                                 <div class="form-group">
                                     <div class="input-group">
                                         <!-- <div class="input-group-addon">Password</div> -->
-                                        <input type="password" id="password3" name="Lokasi_rusak" class="form-control" placeholder="Lokasi Kerusakan.." >
+                                        <input type="text" id="password3" name="lokasi" class="form-control" placeholder="Lokasi Kerusakan.." >
                                         <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                                     </div>
                                 </div>
@@ -127,7 +129,6 @@ if (isset($_SESSION['user']) == null) {
     <!-- Left Panel -->
 
 
-
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -144,6 +145,7 @@ if (isset($_SESSION['user']) == null) {
                 <div class="header-menu"> 
                   <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <h5 style="margin:3px;" ><?php echo $_SESSION['unix']; ?></h5 style="margin:3px;" >
                           <h5 style="margin:19px;" ><?php echo $_SESSION['user']; ?></h5 style="margin:3px;" >
                         <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
                         </a>
@@ -181,7 +183,7 @@ if (isset($_SESSION['user']) == null) {
                     
                                
             <!-- Widgets  -->
-            <div class="row">
+            <div class="row" >
                 <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">

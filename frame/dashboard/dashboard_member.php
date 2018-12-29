@@ -128,7 +128,6 @@ include_once'simpan_laporan_kerusakan.php';
     </aside><!-- /#left-panel --> 
     <!-- Left Panel -->
 
-
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -143,10 +142,23 @@ include_once'simpan_laporan_kerusakan.php';
             </div>
             <div class="top-right"> 
                 <div class="header-menu"> 
-                  <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <h5 style="margin:3px;" ><?php echo $_SESSION['unix']; ?></h5 style="margin:3px;" >
-                          <h5 style="margin:19px;" ><?php echo $_SESSION['user']; ?></h5 style="margin:3px;" >
+                  <div class="user-area dropdown float-right ">
+                        <a href="#" class="dropdown-toggle active " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <div style="
+                                
+                                                 position:absolute;
+                                                border-radius: 24px;
+                                                border: 2px solid rgb(130, 0, 170);
+                                                padding: 21px;                             
+                                                width: 200px;                                                
+                                                height: 10px; 
+                                                
+
+
+                                "></div>
+                                <h5 style="margin:3px;" ><?php echo $_SESSION['unix']; ?></h5 style="margin:3px;" >
+                                <h5 style="margin:19px;" ><?php echo $_SESSION['user']; ?></h5 style="margin:3px;" >
+                                
                         <img class="user-avatar rounded-circle" src="../img/bg-img/client-1.jpg" alt="User Avatar">
                         </a>
 
@@ -304,6 +316,21 @@ include_once'simpan_laporan_kerusakan.php';
                            
                         </div>
                     </div> 
+
+                        <div class="row">
+                                <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-7"style="text-align:center " >Agenda yang akan datang : </h4>
+                                <div class="flot-container">
+                                                                         
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+                        </div>
+
                 </div><!-- /# column -->
             </div>
             <!--  Traffic  End -->
@@ -329,13 +356,13 @@ include_once'simpan_laporan_kerusakan.php';
     </div><!-- /#right-panel -->
 
 
-     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    
 
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-
+     <script src="../assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script
 
     <!--Chartist Chart-->
     <script src="assets/js/lib/chartist/chartist.min.js"></script>
@@ -362,6 +389,7 @@ include_once'simpan_laporan_kerusakan.php';
     <script src="assets/js/lib/flot-chart/curvedLines.js"></script>
     <script src="assets/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js"></script>
     <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
+    >
 
     <!--  Chart js -->
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>

@@ -15,20 +15,20 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header text-white" style="background-color:#e206b3;">
-                <h5 class="modal-title  text-white font-weight-bold" id="exampleModalLabel">Data Berhasil di Hapus !</h5>
+                <h5 class="modal-title  text-white" id="exampleModalLabel">Data Berhasil di Hapus !</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-                <div class="modal-body">
-                    Terimakasih atas laporan anda , Kami dari Go water akan segera memproses laporan anda secepatnya..
-                </div>
+            
             <div class="modal-footer">
-               
+                <button onclick="window.location.href='konfirmasi.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
             </div>
             </div>
         </div>
         </div>
+
+
 
 		<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -64,37 +64,30 @@
 	</body>
 	</html>
 
+
 <?php
 
 include_once'../login/conection.php';
 
 
-if(isset($_POST['submit']))
-
-    {
-        if ($_POST['detail']!=null) {
-            
-       
-
-            $id=$_POST['id'];
-             $waktu=date('Y.m.d');
+$id_del=$_GET['qwz'];
 
 
-            $simpan=$dbkonek->query("insert into kerusakan (Customer_ID,Keterangan,Tanggal,lokasi)values ('$id','$_POST[detail]','$waktu','$_POST[lokasi]')");
+
+$del=$dbkonek->query("delete from customer where ID='$id_del'");
 
 
-            if ($simpan) {
-                echo "<script type='text/javascript'>
-                                            $(document).ready(function(){
-                                            $('#hapus').modal('show');
-                                            });
-                                            </script>";                        
+if ($del) {
+    echo "<script type='text/javascript'>
+								$(document).ready(function(){
+								$('#hapus').modal('show');
+								});
+                                </script>";                        
 
-            }else{
-                echo"gagal delete";
-            }
-         }
+}else{
+    echo"gagal delete";
+}
 
-    }
+
 
 ?>

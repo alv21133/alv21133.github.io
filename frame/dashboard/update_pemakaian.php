@@ -102,7 +102,7 @@ include_once  '../login/conection.php';
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Keuangan</a></li>
                             <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Transaksi</a></li>
-                            <li><i class="fa fa-dollar "></i><a href="maps-vector.html">Kerusakan</a></li>
+                            <li><i class="fa fa-dollar "></i><a href="kerusakan.php">Kerusakan</a></li>
                         </ul>
                     </li>
                     <li class="menu-title">Agenda</li><!-- /.menu-title -->

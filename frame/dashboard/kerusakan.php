@@ -164,50 +164,38 @@ include_once  '../login/conection.php';
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>id</th>
-                                                <th>Nama</th>
-                                                <th>Alamat</th>
-                                                <th>Telp</th>
-                                                <th>Pembayaran</th>
+                                                <th>No</th>
+                                                <th>Customer id</th>
+                                                <th>Tanggal</th>
+                                                <th>Kerusakan</th>
+                                                
+                                                <th>Lokasi</th>
                                                 <th>Paket</th>
                                                 <th>Edit</th>
-                                                <th>Hapus</th>
+                                                
                                                 
                                             </tr><br>
                                         </thead>
                                     <?php
-                                    $ambil=$dbkonek->query("select * from customer where Status='Verifikasi'");
+                                    $ambil=$dbkonek->query("SELECT * FROM kerusakan ");
                                     while ($hasil=mysqli_fetch_array($ambil)) {
                                             
                                             ?>
                                             <tr>
-                                        <td><?php echo $hasil['ID']; ?></td>
-                                        <td><?php echo $hasil['Nama']; ?> </td>
-                                        <td><?php echo $hasil['Alamat']; ?> </td>
-                                        <td><?php echo $hasil['Telp']; ?> </td>
+                                        <td><?php echo $hasil['No']; ?></td>                                 
+                                        <td><?php echo $hasil['Customer_ID']; ?> </td>
+                                         <td><?php echo $hasil['Tanggal']; ?> </td>
+                                        <td><?php echo $hasil['Keterangan']; ?> </td>
+                                       
+                                        <td><?php echo $hasil['lokasi']; ?> </td>
                                             
-                                        <?php
-                                                if ($hasil['Pembayaran']== "Lunas") {
-                                                    ?>
-                                                <td class="badge badge-success"><?php echo $hasil['Pembayaran']; ?> </td>
-                                                <?php
-                                                }else{
-                                                    ?>
-                                                  <td class="badge badge-warning"><?php echo $hasil['Pembayaran']; ?> </td> 
-                                                  <?php
-                                                }
-                                        ?>
-                                        <td><?php echo $hasil['paket']; ?> </td>
+                                     
                                         <td><a style="margin-left:1rem;" href="edit_customer.php?%rwz%qr$=<?php echo $hasil['ID']; ?>" class="ti-settings" ></a></td>
                                         
                                         <td >
                                                 
-                                                <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"  href="delete_customer.php?wx%rq%=<?php echo $hasil['ID']; ?>" class="ti-trash"></a>
-                                        </td>
-
-
-                                        
-                                      
+                                                <a style="margin-left:1rem;" onclick="return confirm('Laporan i <?php echo $hasil['Nama'];?> sudah di tangan dan akan menghapus..?')"  href="hapus_kerusakan.php?rq%=<?php echo $hasil['Customer_ID']; ?>" class="ti-trash"></a>
+                                        </td>                         
                                         
                                     </tr>
                                     <?php
@@ -218,9 +206,7 @@ include_once  '../login/conection.php';
                                 
                         </div> <!-- /.row --> 
 
-
-
-                        
+                    
                         <div class="card-body"></div>
                     </div> 
                 </div><!-- /# column -->

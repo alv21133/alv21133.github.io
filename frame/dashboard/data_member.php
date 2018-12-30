@@ -100,8 +100,8 @@ include_once  '../login/conection.php';
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Keuangan</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Keuangan</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Transaksi</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="keuangan.php">Keuangan</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="transaksi.php">Transaksi</a></li>
                             <li><i class="fa fa-dollar "></i><a href="kerusakan.php">Kerusakan</a></li>
                         </ul>
                     </li>
@@ -109,7 +109,7 @@ include_once  '../login/conection.php';
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Kegiatan</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Pengunguman</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="agenda.php">Agenda</a></li>
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Planing</a></li>
                         </ul>
                     </li>

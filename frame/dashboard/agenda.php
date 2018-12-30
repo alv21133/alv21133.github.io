@@ -14,7 +14,7 @@ include_once  '../login/conection.php';
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Konfirmasi Member</title>
+    <title>Data Member</title>
     <meta name="description" content="sasori admin panel">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../img/judul.png">
@@ -77,7 +77,6 @@ include_once  '../login/conection.php';
 </head>
 <body>
 
-
     <!-- Left Panel --> 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default"> 
@@ -111,7 +110,7 @@ include_once  '../login/conection.php';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Kegiatan</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="agenda.php">Agenda</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="#">Planing</a></li>
+                           
                         </ul>
                     </li>
                 </ul>
@@ -119,7 +118,6 @@ include_once  '../login/conection.php';
         </nav>
     </aside><!-- /#left-panel --> 
     <!-- Left Panel -->
-
     <!-- Right Panel --> 
     <div id="right-panel" class="right-panel">
 
@@ -127,7 +125,7 @@ include_once  '../login/conection.php';
         <header id="header" class="header">  
             <div class="top-left">
                 <div class="navbar-header"> 
-                    <a class="navbar-brand" href="../"><img style="width: 70px; height:45px" src="../img/logo_admin.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img style="width: 70px; height:45px" src="../img/logo_admin.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> 
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> 
                 </div> 
@@ -156,58 +154,41 @@ include_once  '../login/conection.php';
 
         <div class="content pb-0">
 
-
-            <div class="clearfix"></div>
-
-
-
-            <!-- tabel data -->
             <!--  Traffic  -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">  
                         
-                            <h4 class="box-title" style="text-align:center">Kelola akun Customer</h4>
+                            <h4 class="box-title" style="text-align:center">Data Customer </h4>
             
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>id Pelanggan</th>
-                                                <th>nama </th>
-                                                <th>Alamat</th>
-                                                <th>Telp</th>
-                                                <th>Status</th>
-                                                <th>Password</th>
-                                                <th>Ubah Pasword</th>                                               
+                                                <th>No</th>
+                                                <th>Pegawai</th>
+                                                <th>Tanggal</th>
+                                                <th>Keterangan</th>
+                                                
+                                                
+                                                <th>Hapus</th>
+                                                
+                                                
                                             </tr><br>
                                         </thead>
                                     <?php
-                                    $ambil=$dbkonek->query("select * from customer");
+                                    $ambil=$dbkonek->query("SELECT * FROM agenda ");
                                     while ($hasil=mysqli_fetch_array($ambil)) {
                                             
                                             ?>
                                             <tr>
-                                        <td><?php echo $hasil['ID']; ?> </td>
-                                        <td><?php echo $hasil['Nama']; ?> </td>
-                                        <td><?php echo $hasil['Alamat']; ?> </td>
-                                        <td><?php echo $hasil['Telp']; ?> </td>
-                                            
-                                        <?php
-                                                if ($hasil['Status']== "Lunas") {
-                                                    ?>
-                                                <td class="badge badge-success"><?php echo $hasil['Status']; ?> </td>
-                                                <?php
-                                                }else{
-                                                    ?>
-                                                  <td class="badge badge-danger"><?php echo $hasil['Status']; ?> </td> 
-                                                  <?php
-                                                }
-                                        ?>
-                                        <td><?php echo $hasil['Password']; ?> </td>
-                                        <td>
-                                        <a style="margin-left:4rem;" href="simpan_akun.php?%QW$iq@=<?php echo $hasil['ID'];?>" class="ti-settings"></a> 
-                                        </td>
-                                                                                                                  
+                                        <td><?php echo $hasil['No']; ?></td>                                 
+                                        <td><?php echo $hasil['pegawai_ID']; ?> </td>
+                                         <td><?php echo $hasil['Tanggal']; ?> </td>
+                                        <td><?php echo $hasil['Keterangan']; ?> </td>
+                                            <td>    
+                                                <a style="margin-left:1rem;" onclick="return confirm('Laporan <?php echo $hasil['Customer_ID'];?> sudah di tangan dan akan menghapus..?')"  href="hapus_kerusakan.php?rq%=<?php echo $hasil['Customer_ID']; ?>" class="ti-trash"></a>
+                                        </td>                         
+                                        
                                     </tr>
                                     <?php
                                     }
@@ -216,40 +197,106 @@ include_once  '../login/conection.php';
                         <div class="row">                              
                                 
                         </div> <!-- /.row --> 
-                        
+
+                    
                         <div class="card-body"></div>
                     </div> 
                 </div><!-- /# column -->
             </div>
             <!--  Traffic  End -->
-        <!-- tabel2 -->
-                                       <!-- Modal -->
-                <div class="modal fade" id="hapus_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+
+            <div class="clearfix"></div>
+
+
+
+            <div hidden class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">  
+                            <!-- <h4 class="box-title">Chandler</h4> -->
+                            <div class="calender-cont widget-calender">
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div><!-- /.card -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card ov-h">
+                        <div class="card-body bg-flat-color-2"> 
+                            <div id="flotBarChart" class="float-chart ml-4 mr-4"></div>
+                        </div>
+                        <div id="cellPaiChart" class="float-chart"></div> 
+                    </div><!-- /.card -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card weather-box">
+                        <h4 class="weather-title box-title">Cuaca hari ini</h4>
+                        <div class="card-body">  
+                            <div class="weather-widget">
+                                <div id="weather-one" class="weather-one"></div>
+                            </div> 
+                        </div>
+                    </div><!-- /.card -->
+                </div>
+            </div><!-- /.row -->
+            <!-- Calender Chart Weather  End -->
+
+
+            <div class="modal fade none-border" id="event-modal">
+                <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Anda yakin untuk menghapus data ?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                       <?php echo $t_id?>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="konfirmasi.php"><button type="button" class="btn btn-primary">Hapus</button></a>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>       
-                    </div>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"><strong>Add New Event</strong></h4>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
+                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Modal Add Category -->
+            <div class="modal fade none-border" id="add-category">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"><strong>Add a category </strong></h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Category Name</label>
+                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Choose Category Color</label>
+                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                            <option value="success">Success</option>
+                                            <option value="danger">Danger</option>
+                                            <option value="info">Info</option>
+                                            <option value="pink">Pink</option>
+                                            <option value="primary">Primary</option>
+                                            <option value="warning">Warning</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-
-
-
+            </div>
+            <!-- END MODAL -->
         </div> <!-- .content -->
         <div class="clearfix"></div>
 
@@ -268,8 +315,6 @@ include_once  '../login/conection.php';
 
     </div><!-- /#right-panel -->
 
- 
- 
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/vendor/Jquery3.1.js"></script>
@@ -301,13 +346,6 @@ include_once  '../login/conection.php';
 
 
 
-            <script>
-
-                
-            </script>
-
-
-
 <script>
     jQuery(document).ready(function() {
    jQuery('#member').DataTable( {
@@ -336,7 +374,11 @@ include_once  '../login/conection.php';
 } );
 
 
+</script>
 
+
+
+    <script>
         jQuery(document).ready(function($) {
             "use strict"; 
 
@@ -369,13 +411,22 @@ include_once  '../login/conection.php';
                 }
             });
 
+            // Pie chart flotPie1  En
+
+
+//data table
+
+
+
+
+
+
+
+
             
 
         });  // End of Document Ready 
     </script>
-
-
-    
 
 
 

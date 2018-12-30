@@ -22,7 +22,7 @@
             </div>
             
             <div class="modal-footer">
-                <button onclick="window.location.href='konfirmasi.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
+                <button onclick="window.location.href='kerusakan.php'" type="button" class="btn btn-dark"  data-dismiss="modal">Tutup</button>
             </div>
             </div>
         </div>
@@ -70,12 +70,10 @@
 include_once'../login/conection.php';
 
 
-$id_del=$_GET['qwz'];
+$id_del=$_GET['rq%'];
 
 
-
-$del=$dbkonek->query("delete from customer where ID='$id_del'");
-
+$del=$dbkonek->query("delete from kerusakan where Customer_ID='$id_del'");
 
 if ($del) {
     echo "<script type='text/javascript'>

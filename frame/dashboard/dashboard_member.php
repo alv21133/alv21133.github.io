@@ -147,10 +147,10 @@ include_once'simpan_laporan_kerusakan.php';
                                <div style="
                                 
                                                  position:absolute;
-                                                border-radius: 24px;
+                                                border-radius: 27px;
                                                 border: 2px solid rgb(130, 0, 170);
-                                                padding: 21px;                             
-                                                width: 200px;                                                
+                                                padding: 20px;                             
+                                                width: 210px;                                                
                                                 height: 10px; 
                                                 
 
@@ -255,7 +255,8 @@ include_once'simpan_laporan_kerusakan.php';
 
                 ?>
              
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6"><a href="#agenda">
+                    
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
@@ -265,7 +266,7 @@ include_once'simpan_laporan_kerusakan.php';
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
                                           <?php
-                                        $ambil=$dbkonek->query("select count(ID) as jumlah from customer");
+                                        $ambil=$dbkonek->query("select count(No) as jumlah from agenda");
                                         while ($hasil=mysqli_fetch_array($ambil)) {           
                                         ?>
                                         <div class="stat-text"><span class="count"><?php echo $hasil['jumlah'];  ?></span></div> 
@@ -277,13 +278,13 @@ include_once'simpan_laporan_kerusakan.php';
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div></a>
                 </div>
             </div> 
             <!-- Widgets End -->
 
             <!--  Traffic  -->
-            <div class="row">
+            <div class="row" >
                 
                   <div class="col-lg-8">
                         <div class="card">
@@ -317,19 +318,65 @@ include_once'simpan_laporan_kerusakan.php';
                         </div>
                     </div> 
 
-                        <div class="row">
-                                <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-7"style="text-align:center " >Agenda yang akan datang : </h4>
-                                <div class="flot-container">
-                                                                         
+                               
+                                <div class="card" id="agenda">
+                                                  <div class="row">
+                                                <div class="col-sm-4">
+                                                        <div class="card-body ">  
+                                                          
+                                                            <div class="calender-cont widget-calender">
+                                                                <div id="calendar"></div> 
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            
+                                            <div class="col-sm-8">
+                                                <div class="card-body">
+                                                    <h4 class="mb-7 font-weight-bold"style="text-align:center " >Agenda yang akan datang : </h4>
+                                                    <div class="flot-container">
+                                                            
+                                                                        <div class="card-body">
+                                                                            <table class="table">
+                                                                                <thead class="" >
+                                                                                    <tr >
+                                                                                    <th scope="col">No</th>
+                                                                                    <th scope="col">Tanggal</th>
+                                                                                    <th scope="col">Keterangan</th>
+                                                                                
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php
+                                                                                $get=$dbkonek->query("select * from agenda");                                   
 
+                                                                                while ($agenda=mysqli_fetch_array($get)) {
+
+                                                                                    ?>
+                                                                                
+                                                                                    
+                                                                            
+                                                                                <tr>
+                                                                                    
+                                                                                    <td><?php echo $agenda['No'];?></td>
+                                                                                    <td><?php echo  date('d-m-Y ',strtotime($agenda['Tanggal']));?></td>
+                                                                                    <td><?php echo $agenda['Keterangan'];?></td>
+                                                                                
+                                                                                </tr>
+                                                                                <?php
+                                                                                }
+                                                                                ?>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </div>   <!--table -->                                                               
+                                                                   
+                                                        </div>
+                                                    </div>
+                                            </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>     
-                        </div>
+                       
 
                 </div><!-- /# column -->
             </div>

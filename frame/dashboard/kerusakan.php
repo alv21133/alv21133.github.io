@@ -194,7 +194,7 @@ include_once  '../login/conection.php';
                                         
                                         <td >
                                                 
-                                                <a style="margin-left:1rem;" onclick="return confirm('Laporan i <?php echo $hasil['Nama'];?> sudah di tangan dan akan menghapus..?')"  href="hapus_kerusakan.php?rq%=<?php echo $hasil['Customer_ID']; ?>" class="ti-trash"></a>
+                                                <a style="margin-left:1rem;" onclick="return confirm('Laporan <?php echo $hasil['Customer_ID'];?> sudah di tangan dan akan menghapus..?')"  href="hapus_kerusakan.php?rq%=<?php echo $hasil['Customer_ID']; ?>" class="ti-trash"></a>
                                         </td>                         
                                         
                                     </tr>

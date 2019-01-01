@@ -199,7 +199,7 @@ include_once  '../login/conection.php';
                                                 <?php
                                                 }else{
                                                     ?>
-                                                  <td class="badge badge-danger"><?php echo $hasil['Status']; ?> </td> 
+                                                  <td class="badge badge-info"><?php echo $hasil['Status']; ?> </td> 
                                                   <?php
                                                 }
                                         ?>

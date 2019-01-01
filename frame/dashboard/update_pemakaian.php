@@ -2,11 +2,12 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
+
+
 //if (isset($_SESSION['login']) != TRUE) {
  //   header("location: ../login/");
 //}
 ?>
-
 
 <!doctype html>
 
@@ -24,7 +25,10 @@ include_once  '../login/conection.php';
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+   
+  
     <link rel="stylesheet" href="assets/data_table/datatables.min.css">
+ 
     <link rel="stylesheet" href="assets/data_table/Select-1.2.6/css/select.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/data_table/FixedHeader/css/fixedHeader.bootstrap4.css">
 
@@ -151,6 +155,8 @@ include_once  '../login/conection.php';
         </header><!-- /header -->
         <!-- Header-->
 
+      
+   
 
         <div class="content pb-0">
 
@@ -158,18 +164,20 @@ include_once  '../login/conection.php';
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">  
-                        
+    
                             <h4 class="box-title" style="text-align:center">Data Pemakaian Customer </h4>
-            
+
+                          
+
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th>No</th>
                                                 <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>Tahun</th>
-                                                <th>Pemakaian Bulan Lalu</th>
-                                                <th>Pemakaian Bulan ini</th>
+                                                <th>Tanggal</th>
+                                                <th> Bulan Lalu</th>
+                                                <th> Bulan ini</th>
                                                 <th>Update Data</th>
                                                 <th>Hapus Data</th>
                                               
@@ -177,35 +185,27 @@ include_once  '../login/conection.php';
                                             </tr><br>
                                         </thead>
                                     <?php
-                                    $ambil=$dbkonek->query("select * from pemakaian ");
+                                    $ambil=$dbkonek->query(" select No ,Customer_ID,Tanggal, Pemakaian_Bulan_Lalu,Pemakaian_Bulan_Ini,customer.nama from pemakaian join customer on Customer_ID = ID order by Tanggal DESC");
                                     while ($hasil=mysqli_fetch_array($ambil)) {
                                             
                                             ?>
                                             <tr class="text-center" >
                                         <td><?php echo $hasil['No']; ?></td>
                                         <td><?php echo $hasil['Customer_ID']; ?> </td>
-                                        <td><?php echo $hasil['Customer_ID']; ?> </td>
+                                        <td><?php echo $hasil['nama']; ?> </td>
                                         <td><?php echo $hasil['Tanggal']; ?> </td>
                                         <td><?php echo $hasil['Pemakaian_Bulan_Lalu']; ?> </td>
                                         <td><?php echo $hasil['Pemakaian_Bulan_Ini']; ?> </td>
 <!--                                             
                                         <?php
-                                                if ($hasil['Pembayaran']== "Lunas") {
-                                                    ?>
-                                                <td class="badge badge-success"><?php echo $hasil['Pembayaran']; ?> </td>
-                                                <?php
-                                                }else{
-                                                    ?>
-                                                  <td class="badge badge-warning"><?php echo $hasil['Pembayaran']; ?> </td> 
-                                                  <?php
-                                                }
+                                                
                                         ?> -->
-                                        <!-- <td><?php echo $hasil['paket']; ?> </td> -->
-                                        <td><a style="margin-left:1rem;" href="edit_customer.php?%rwz%qr$=<?php echo $hasil['ID']; ?>" class="btn btn-warning  " >update</a></td>
+                                      
+                                        <td><a style="margin-left:1rem;" href="input_pemakaian.php?%qr$=<?php echo $hasil['No']; ?>" class="btn btn-warning  " >update</a></td>
                                         
                                         <td >
                                                 
-                                                <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data <?php echo $hasil['Nama'];?> ingin menghapus..?')"  href="delete_customer.php?wx%rq%=<?php echo $hasil['ID']; ?>" class="btn btn-danger text-wight-bold ">Hapus</a>
+                                                <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data Transaksi No  <?php echo $hasil['No'];?> Pada <?php echo $hasil['Tanggal']?> ingin dihapus..?')"  href="hapus_pemakaian.php?%rq%=<?php echo $hasil['No']; ?>" class="btn btn-danger text-wight-bold ">Hapus</a>
                                         </td>
 
 
@@ -234,38 +234,6 @@ include_once  '../login/conection.php';
 
 
 
-            <div hidden class="row">
-                <div class="col-md-12 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">  
-                            <!-- <h4 class="box-title">Chandler</h4> -->
-                            <div class="calender-cont widget-calender">
-                                <div id="calendar"></div>
-                            </div>
-                        </div>
-                    </div><!-- /.card -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card ov-h">
-                        <div class="card-body bg-flat-color-2"> 
-                            <div id="flotBarChart" class="float-chart ml-4 mr-4"></div>
-                        </div>
-                        <div id="cellPaiChart" class="float-chart"></div> 
-                    </div><!-- /.card -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card weather-box">
-                        <h4 class="weather-title box-title">Cuaca hari ini</h4>
-                        <div class="card-body">  
-                            <div class="weather-widget">
-                                <div id="weather-one" class="weather-one"></div>
-                            </div> 
-                        </div>
-                    </div><!-- /.card -->
-                </div>
-            </div><!-- /.row -->
-            <!-- Calender Chart Weather  End -->
 
 
             <div class="modal fade none-border" id="event-modal">
@@ -373,34 +341,35 @@ include_once  '../login/conection.php';
 
 <script>
     jQuery(document).ready(function() {
-   jQuery('#member').DataTable( {
-         "language": {
-            "lengthMenu": "Tampilkan _MENU_ ",
-            "zeroRecords": "Data Tidak Ada",
-            "info": "Halaman _PAGE_ Dari _PAGES_",
-            "infoEmpty": "Data Tidak Ada",
-            "search": "Cari",
-            "paginate": {
-                       "next":       "Lanjut",
-                        "previous":   "Sebelumnya"
-                        },
-            
-            
-        },
-        select: {
-        style: 'single'
-        },
-        fixedHeader: {
-            header: true,
-            footer: true
-        }
-       
-    } );
-} );
+                            jQuery('#member').DataTable( {
+                                    "language": {
+                                        "lengthMenu": "Tampilkan _MENU_ ",
+                                        "zeroRecords": "Data Tidak Ada",
+                                        "info": "Halaman _PAGE_ Dari _PAGES_",
+                                        "infoEmpty": "Data Tidak Ada",
+                                        "search": "Cari",
+                                        "paginate": {
+                                                "next":       "Lanjut",
+                                                    "previous":   "Sebelumnya"
+                                                    },
+                                        
+                                        
+                                    },
+                                    select: {
+                                    style: 'single'
+                                    },
+                                    fixedHeader: {
+                                        header: true,
+                                        footer: true
+                                    },
+
+
+                                } );
+                      } );
+
 
 
 </script>
-
 
 
     <script>

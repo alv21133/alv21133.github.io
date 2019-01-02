@@ -2,7 +2,7 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
-include_once  'simpan_pemakaian.php';
+
 
 //if (isset($_SESSION['login']) != TRUE) {
  //   header("location: ../login/");
@@ -178,7 +178,7 @@ include_once  'simpan_pemakaian.php';
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mb-7 font-weight-bold" >ID : <?php echo $data['Customer_ID']?> <h4 class="mb-7 font-weight-bold" style="text-align:center"><?php echo $data['nama']?></h4></h4>                                    
-                                    <form action="" method="POST">
+                                    <form action="simpan_bayar.php" method="POST">
                                         
                                             
                                             <div class="row"> 
@@ -213,13 +213,13 @@ include_once  'simpan_pemakaian.php';
                                                   
                                                     <div class="col-md-6 mb-3">
                                                         <label for="validationServer01">Jumlah Penggunaan</label>
-                                                        <input type="text" name="bulan_lama" class="form-control is-valid font-weight-bold" id="validationServer01"  readonly  value="<?php echo $data['Pemakaian_Bulan_Ini']?>" required>
+                                                        <input type="text" name="biaya" class="form-control is-valid font-weight-bold" id="validationServer01"  readonly  value="<?php echo $data['Pemakaian_Bulan_Ini']?>" required>
                                                                 <div class="valid-feedback">
                                                                      GoWater Data !
                                                                 </div>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
-                                                            <label for="validationServer02">Jumlah Bayar</label>
+                                                            <label for="validationServer02">Jumlah Tagihan</label>
                                                             <input type="text" name="bulan_baru" class="form-control is-valid font-weight-bold" id=" " readonly  value="<?php $p= $data['Pemakaian_Bulan_Ini']* 2000; echo "Rp " . number_format($p,2,',','.'); ?>" >
                                                             <input type="text" name="bulan_baru" class="form-control is-valid font-weight-bold" id="tagihan" hidden value="<?php $p= $data['Pemakaian_Bulan_Ini']* 2000; echo $p ?>" >
                                                             
@@ -249,7 +249,7 @@ include_once  'simpan_pemakaian.php';
                                                   
                                                     <div class="col-md-6 mb-3">
                                                         <label for="validationServer01">Jumlah Bayar</label>
-                                                        <input type="text" name="bulan_lama" class="form-control is-valid " id="bayar" onkeyup="total()" placeholder="Masukan Jumlah Bayar" required>
+                                                        <input type="text" name="bayar" class="form-control is-valid " id="bayar" onkeyup="total()" placeholder="Masukan Jumlah Bayar" required>
                                                                 <div class="valid-feedback">
                                                                      GoWater Data !
                                                                 </div>

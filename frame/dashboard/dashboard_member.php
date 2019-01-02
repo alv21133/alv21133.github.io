@@ -220,12 +220,12 @@ include_once'simpan_laporan_kerusakan.php';
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-2">
+                                <div class="stat-icon dib flat-color-2" >
                                     <i class="pe-7f-browser"></i>
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">Rp <span class="count"><?php echo $data['Biaya'] ?></span></div>
+                                        <div class="stat-text" ><h style="position:absolute;left:6rem;" >Rp</h><span class="count"><?php $b=$data['Pemakaian_Bulan_Ini']; echo $b*2000 ?></span></div>
                                         <div class="stat-heading">Biaya</div> 
                                     </div>
                                 </div>
@@ -242,7 +242,7 @@ include_once'simpan_laporan_kerusakan.php';
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib"> 
-                                        <div class="stat-text"><span class="count"><?php echo $data['Saldo'] ?></span></div>
+                                        <div class="stat-text"><h style="position:absolute;left:6rem;" >Rp</h><span class="count"><?php echo $data['Saldo'] ?></span></div>
                                         <div class="stat-heading">Saldo</div>
                                     </div>
                                 </div>

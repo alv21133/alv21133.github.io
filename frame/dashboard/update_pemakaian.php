@@ -155,8 +155,6 @@ include_once  '../login/conection.php';
         </header><!-- /header -->
         <!-- Header-->
 
-      
-   
 
         <div class="content pb-0">
 
@@ -167,7 +165,7 @@ include_once  '../login/conection.php';
     
                             <h4 class="box-title" style="text-align:center">Data Pemakaian Customer </h4>
 
-                          
+                          <a href="print_pemakaian.php" style="text-salign:right"><img src="images/print.png" style="width:40px" ></img></a>
 
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
@@ -179,6 +177,7 @@ include_once  '../login/conection.php';
                                                 <th> Bulan Lalu</th>
                                                 <th> Bulan ini</th>
                                                 <th>Update Data</th>
+                                                <th>Bayar</th>
                                                 <th>Hapus Data</th>
                                               
                                                 
@@ -203,6 +202,10 @@ include_once  '../login/conection.php';
                                       
                                         <td><a style="margin-left:1rem;" href="input_pemakaian.php?%qr$=<?php echo $hasil['No']; ?>" class="btn btn-warning  " >update</a></td>
                                         
+                                        <td >
+                                                
+                                                <a style="margin-left:1rem;" onclick="return confirm('Pembayaran Nomor transaksi <?php echo $hasil['No'];?> Pada <?php echo date('d-m-Y',strtotime($hasil['Tanggal']))?> akan di lakukan..?')"  href="pembayaran.php?%rq%=<?php echo $hasil['No']; ?>" class="btn btn-info text-wight-bold ">Bayar</a>
+                                        </td>
                                         <td >
                                                 
                                                 <a style="margin-left:1rem;" onclick="return confirm('Anda yakin data Transaksi No  <?php echo $hasil['No'];?> Pada <?php echo $hasil['Tanggal']?> ingin dihapus..?')"  href="hapus_pemakaian.php?%rq%=<?php echo $hasil['No']; ?>" class="btn btn-danger text-wight-bold ">Hapus</a>

@@ -159,8 +159,8 @@ include_once  '../login/conection.php';
                 <div class="col-lg-12">
                     <div class="card">  
                         
-                            <h4 class="box-title" style="text-align:center">Data Customer </h4>
-            
+                            <h4 class="box-title" style="text-align:center">Data Transaksi Customer </h4>
+             <a href="print_transaksi.php" style="text-salign:right; margin-left:22px"><img src="images/print.png" style="width:40px" ></img></a>
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
                                             <tr>

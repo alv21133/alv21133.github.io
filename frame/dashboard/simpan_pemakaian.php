@@ -87,6 +87,7 @@ if(isset($_POST['submit']))
 
 
               $simpan=$dbkonek->query("insert into pemakaian (No,Customer_ID,Tanggal,Pemakaian_Bulan_Lalu,Pemakaian_Bulan_Ini)values ('$new_id','$_POST[id]','$waktu','$_POST[bulan_lama]','$_POST[bulan_baru]')");
+                $status=$dbkonek->query("update customer SET Pembayaran='Belum Lunas' WHERE ID='$_POST[id]'");
 
 
             if ($simpan) {

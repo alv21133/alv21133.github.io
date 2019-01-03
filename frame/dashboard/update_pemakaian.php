@@ -165,11 +165,11 @@ include_once  '../login/conection.php';
     
                             <h4 class="box-title" style="text-align:center">Data Pemakaian Customer </h4>
 
-                          <a href="print_pemakaian.php" style="text-salign:right"><img src="images/print.png" style="width:40px" ></img></a>
+                          <a href="print_pemakaian.php" style="text-salign:right; margin-left:22px"><img src="images/print.png" style="width:40px" ></img></a>
 
                             <table class=" table table-striped " id="member">                             
                                         <thead class="thead-dark">
-                                            <tr>
+                                            <tr  class="text-center">
                                                 <th>No</th>
                                                 <th>ID</th>
                                                 <th>Nama</th>

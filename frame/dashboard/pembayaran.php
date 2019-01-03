@@ -2,6 +2,7 @@
 //error_reporting(0);
 //session_start();
 include_once  '../login/conection.php';
+include_once  'simpan_bayar.php';
 
 
 //if (isset($_SESSION['login']) != TRUE) {
@@ -178,7 +179,7 @@ include_once  '../login/conection.php';
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mb-7 font-weight-bold" >ID : <?php echo $data['Customer_ID']?> <h4 class="mb-7 font-weight-bold" style="text-align:center"><?php echo $data['nama']?></h4></h4>                                    
-                                    <form action="simpan_bayar.php" method="POST">
+                                    <form action="" method="POST">
                                         
                                             
                                             <div class="row"> 
